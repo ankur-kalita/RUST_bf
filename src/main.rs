@@ -1,78 +1,78 @@
 // fn main() {
-    // // println!("Hello, world!");
+// // println!("Hello, world!");
 
-    // // Definition
-    // let x = 10.0;
-    // println!("x is: {x}");
+// // Definition
+// let x = 10.0;
+// println!("x is: {x}");
 
-    // // Mutability 
-    // let mut y = 69;
-    // y = 32;
+// // Mutability
+// let mut y = 69;
+// y = 32;
 
-    // // Scope 
-    // {
-    //     let y = 34;
-    // }
+// // Scope
+// {
+//     let y = 34;
+// }
 
-    // // Shaodowing
-    // let t = 23;
-    // let t = t + 23;
-    // println!("t is : {t}");
+// // Shaodowing
+// let t = 23;
+// let t = t + 23;
+// println!("t is : {t}");
 
-    // // Constants
-    // const MAX_VALUE: u32 = 100;
+// // Constants
+// const MAX_VALUE: u32 = 100;
 
-    // // Unsigned integers
-    // let unsigned_num: u8 = 5; 
+// // Unsigned integers
+// let unsigned_num: u8 = 5;
 
-    // // Signed integers
-    // let signed_num: i8 = 5; 
+// // Signed integers
+// let signed_num: i8 = 5;
 
-    // // Floating point numbers
-    // let float_num: f32 = 5.0; 
+// // Floating point numbers
+// let float_num: f32 = 5.0;
 
-    // // Platform specific integers
-    // let arch_1: usize = 5;
-    // let arch_2: isize = 5;
+// // Platform specific integers
+// let arch_1: usize = 5;
+// let arch_2: isize = 5;
 
-    // // Characters
-    // let char = 'a';
+// // Characters
+// let char = 'a';
 
-    // // Boolean
-    // let b: bool = true;
+// // Boolean
+// let b: bool = true;
 
-    // // Type aliasing
-    // type Age = u8; 
-    // let peter_age: Age = 42;
+// // Type aliasing
+// type Age = u8;
+// let peter_age: Age = 42;
 
-    // // Type Conversion
-    // let a = 10; 
-    // let b = a as f64;
-    // print!("{a} and {b}");
+// // Type Conversion
+// let a = 10;
+// let b = a as f64;
+// print!("{a} and {b}");
 
-    // //&str and String 
-    // let fixed_str = "hi hello bye";
-    // let mut flexible_str = String::from("This string will grow");
-    // flexible_str.push('h')
+// //&str and String
+// let fixed_str = "hi hello bye";
+// let mut flexible_str = String::from("This string will grow");
+// flexible_str.push('h')
 
-    //  // Arrays
-    //  let mut array_1 = [4, 5, 6, 8, 9];
-    //  let num = array_1[3];
- 
-    //  println!("{:?}", array_1);
-    //  let array_2 = [0; 10];
- 
-    //  // Vectors
-    //  let vec_1: Vec<i32> = vec![4, 5, 6, 8, 9];
-    //  let num = vec_1[3];
- 
-    //  // Tuples
-    //  let my_info = ("Salary", 40000, "Age", 40);
-    //  let salary_value = my_info.1;
-    //  let (salary, salary_value, age, age_value) = my_info;
- 
-    //  let unit = ();
- 
+//  // Arrays
+//  let mut array_1 = [4, 5, 6, 8, 9];
+//  let num = array_1[3];
+
+//  println!("{:?}", array_1);
+//  let array_2 = [0; 10];
+
+//  // Vectors
+//  let vec_1: Vec<i32> = vec![4, 5, 6, 8, 9];
+//  let num = vec_1[3];
+
+//  // Tuples
+//  let my_info = ("Salary", 40000, "Age", 40);
+//  let salary_value = my_info.1;
+//  let (salary, salary_value, age, age_value) = my_info;
+
+//  let unit = ();
+
 // }
 
 // fn main() {
@@ -140,29 +140,29 @@
 //     }
 // }
 // fn main() {
-    /* Escape sequences
-        \n : Newline character.
-        \t : Tab space.
-        \r : Carriage Return.
-        \" : Double quote.
-        \\ : Backward slash.
-    */
-    // println!("\n Will be printed after one empty line");
-    // println!("\t A tab space at the start");
-    // println!("This will be overwritten \r This text will only appear on the screen");
+/* Escape sequences
+    \n : Newline character.
+    \t : Tab space.
+    \r : Carriage Return.
+    \" : Double quote.
+    \\ : Backward slash.
+*/
+// println!("\n Will be printed after one empty line");
+// println!("\t A tab space at the start");
+// println!("This will be overwritten \r This text will only appear on the screen");
 
-    // println!("Prints double quotes \", Prints backslash \\");
+// println!("Prints double quotes \", Prints backslash \\");
 
-    // println!(
-    //     "I am doing {2} from {1} years and i {0} it",
-    //     "like", 20, "programming"
-    // );
+// println!(
+//     "I am doing {2} from {1} years and i {0} it",
+//     "like", 20, "programming"
+// );
 
-    // println!(
-    //     "{language} is a system programming language which is cool to {activity} in.",
-    //     activity = "code",
-    //     language = "Rust"
-    // );
+// println!(
+//     "{language} is a system programming language which is cool to {activity} in.",
+//     activity = "code",
+//     language = "Rust"
+// );
 
 // }
 
@@ -207,21 +207,21 @@ Finally, calculate the difference as 225 - 55 = 170.
 
 //     let mut square_of_sum = 0;
 //     let mut sum_of_squares = 0;
-    
+
 //     let mut m = n;
 //     while m != 0 {
 //         square_of_sum += m;
 //         sum_of_squares += m.pow(2);
 //         m -= 1;
 //     }
-    
+
 //     let difference = square_of_sum.pow(2) - sum_of_squares;
 //     println!(
 //         "The difference of the square_of_sum and sum of Squares for N = {} is {}",
 //         n, difference
 //     );
-    
-//     /* Complete the code after this line */ 
+
+//     /* Complete the code after this line */
 // }
 
 // fn main() {
@@ -229,8 +229,8 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     std::io::stdin()
 //         .read_line(&mut n)
 //         .expect("failed to read input.");
-//     let n: i32 = n.trim().parse().expect("invalid input"); 
-    
+//     let n: i32 = n.trim().parse().expect("invalid input");
+
 //     let mut sum = 0;
 //     for i in 1..n {
 //         if i % 3 == 0 || i % 5 == 0 {
@@ -238,11 +238,9 @@ Finally, calculate the difference as 225 - 55 = 170.
 //         }
 //     }
 //     print!("{sum}");
-    
-//     /* Add your code below this line */   
-    
-// }
 
+//     /* Add your code below this line */
+// }
 
 // fn main() {
 //     let input = String::from("1211");
@@ -287,13 +285,11 @@ Finally, calculate the difference as 225 - 55 = 170.
 
 // fn main() {
 //     let three = 3;
- 
+
 //     if three {
 //         println!("Number was three");
 //     }
 // }
-
-
 
 // fn main() {
 //     let marks = 98;
@@ -420,7 +416,6 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     let move_out = ref_1;
 //     // let move_out_again = ref_1;
 // }
-
 
 // Structs
 
@@ -554,3 +549,727 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     let day = WeekDay::Saturday;
 // }
 
+// enum TravelType {
+//     Car(f32),
+//     Train(f32),
+//     Aeroplane(f32),
+// }
+
+// impl TravelType {
+//     fn travel_allowance(&self) -> f32 {
+//         let allowance = match self {
+//             TravelType::Car(miles) => miles * 2.0,
+//             TravelType::Train(miles) => miles * 3.0,
+//             TravelType::Aeroplane(miles) => miles * 5.0,
+//         };
+//         allowance
+//     }
+// }
+// fn main() {
+//     let participant = TravelType::Car(60.0);
+//     println!(
+//         "Allowance of participant is: {}",
+//         participant.travel_allowance()
+//     );
+// }
+
+// Option
+
+// struct Student {
+//     name: String,
+//     grade: Option<u32>,
+// }
+
+// fn main() {
+//     let student_db = vec![
+//         Student {
+//             name: String::from("Alice"),
+//             grade: Some(95),
+//         },
+//         Student {
+//             name: String::from("Bob"),
+//             grade: Some(87),
+//         },
+//         Student {
+//             name: String::from("Charlie"),
+//             grade: None,
+//         },
+//     ];
+//     let student_name = String::from("Bob");
+//     let student_grade = get_grade(&student_name, &student_db);
+
+//     // match student_grade {
+//     //     Some(grade) => println!("Grade is: {grade}"),
+//     //     None => {}
+//     // }
+
+//     if let Some(grade) = student_grade {
+//         println!("Grade is: {grade}");
+//     }
+// }
+
+// struct Student {
+//     name: String,
+//     grade: Option<u32>,
+// }
+// fn get_grade(student_name: &String, student_db: &Vec<Student>) -> Option<u32> {
+//     for student in student_db {
+//         if student.name == *student_name {
+//             return student.grade;
+//         }
+//     }
+//     None // not reachable
+// }
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
+
+// fn check_student(student_name: &String, student_db: &Vec<Student>) -> Result<(), String> {
+//     for student in student_db {
+//         if student.name == *student_name {
+//             return Ok(());
+//         }
+//     }
+//     Err(String::from("Student not found"))
+// }
+
+// fn check_student_get_grade(
+//     student_name: &String,
+//     student_db: &Vec<Student>,
+// ) -> Result<Option<u32>, String> {
+//     for student in student_db {
+//         if student.name == *student_name {
+//             return Ok(student.grade);
+//         }
+//     }
+//     Err(String::from("Student not found"))
+// }
+// fn main() {
+//     let student_db = vec![
+//         Student {
+//             name: String::from("Alice"),
+//             grade: Some(95),
+//         },
+//         Student {
+//             name: String::from("Bob"),
+//             grade: Some(87),
+//         },
+//         Student {
+//             name: String::from("Charlie"),
+//             grade: None,
+//         },
+//     ];
+
+//     let student_name = String::from("Adam");
+//     let student_status = check_student_get_grade(&student_name, &student_db);
+
+//     match student_status {
+//         Ok(option_grade) => {
+//             if let Some(grade) = option_grade {
+//                 println!("Grade is: {grade}");
+//             }
+//         }
+//         Err(error_msg) => println!("{error_msg}"),
+//     }
+//     // let student_grade = get_grade(&student_name, &student_db);
+
+//     // match student_grade {
+//     //     Some(grade) => println!("Grade is: {grade}"),
+//     //     None => {}
+//     // }
+
+//     // if let Some(grade) = student_grade {
+//     //     println!("Grade is: {grade}");
+//     // }
+// }
+
+// HashMaps
+
+//  use std::{collections::HashMap};
+// fn main() {
+//     let mut person:HashMap<&str, i32> = HashMap::new();
+//     person.insert("Nouman", 69);
+//     person.insert("Ankur", 21);
+//     println!("I am {:?}", person.get("Nouman").unwrap());
+
+//     if person.contains_key("Nouman") {
+//         println!("The value exist.");
+//     } else {
+//         print!("Insallah");
+//     }
+//     match person.get("Nouman") {
+//         Some(value) => println!("The value exists: {}", value),
+//         None => println!("The value does not exist"),
+//     }
+
+//     for (name, age) in &person {
+//         println!("The person {} has an age of {}", name, age);
+//     }
+
+//     let mut likes: HashMap<&str, &str> = HashMap::new();
+
+//     // likes.insert("Nouman", "apple");
+//     // likes.insert("Nouman", "mango");
+//     // println!("The fruit which is being liked is {:?}", likes);
+
+//     likes.entry("Nouman").or_insert("apple");
+//     likes.entry("Nouman").or_insert("mango");
+//     println!("The fruit which is being liked is {:?}", likes);
+//}
+
+// fn main() {
+//     let some_vec: Vec<i32> = vec![5, 5, 8, 8, 1, 0, 1, 5, 5, 5, 5];
+//     let mut freq_vec: HashMap<i32, u32> = HashMap::new();
+
+//     for i in &some_vec {
+//         let freq = freq_vec.entry(*i).or_insert(0);
+//         *freq += 1;
+//     }
+
+//     println!("{:?}", freq_vec);
+// }
+
+// struct S {
+//     x: i32,
+// }
+
+// fn main() {
+//     let mut s1 = S { x: 2 };
+//     let v = &mut s1;
+//     v.x += 1;
+//     // s1.x += 1;
+//     print!("{}{}", v.x, s1.x);
+// }
+
+// mod product {
+//     pub use category::Category;
+//         pub struct Product {
+//             id: u64,
+//             name: String,
+//             price: f64,
+//             category: Category,
+//         }
+
+//     impl Product {
+//         pub fn new(id: u64, name: String, price: f64, category: Category) -> Product {
+//             Product {
+//                 id,
+//                 name,
+//                 price,
+//                 category,
+//             }
+//         }
+//     }
+// }
+
+// GENERICS
+// struct Point<T, U> {
+//     x: T,
+//     y: U
+// }
+
+// impl Point<i32, i32> {
+//     fn printing(&self) {
+//         println!("The values of the coordinates are {}, {}", self.x, self.y);
+//     }
+
+//     fn new_1(x: i32, y: i32) -> Point<i32, i32> {
+//         Point { x, y }
+//     }
+// }
+
+// fn add_points<T, U>(p1: &Point<T, U>, p2: &Point<T, U>) -> Point<T, U> {
+//     unimplemented!();
+// }
+
+// impl<T, U> Point<T,U> {
+//     fn new(x: T, y: U) -> Point<T, U> {
+//         Point {x, y}
+//     }
+// }
+// fn main() {
+//     let origin = Point::new(0, 0);
+//     let p1 = Point::new(1.0, 2.0);
+
+//     let p2 = Point::new(2, 3.0);
+
+// }
+
+// TRAITS
+// struct Square {
+//     side: f32,
+//     line_width: u8,
+//     color: String,
+//     //info: drawing_info,
+// }
+
+// struct Rectangle {
+//     length: f32,
+//     width: f32,
+//     line_width: u8,
+//     color: String,
+//     // info: drawing_info,
+// }
+// trait Shape {
+//     fn area(&self) -> f32;
+//     fn perimeter(&self) -> f32 {
+//         println!("Perimeter not implemented, returning dummy value");
+//         0.0
+//     }
+// }
+// impl Shape for Rectangle {
+//     fn area(&self) -> f32 {
+//         let area_of_rect = self.length * self.width;
+//         println!("Rectangle area: {}", area_of_rect);
+//         area_of_rect
+//     }
+// }
+// impl Shape for Square {
+//     fn area(&self) -> f32 {
+//         let area_of_square = self.side * self.side;
+//         println!("Square area: {}", area_of_square);
+//         area_of_square
+//     }
+// }
+// fn main() {
+//     let r1 = Rectangle {
+//         width: 5.0,
+//         length: 4.0,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+
+//     let s1 = Square {
+//         side: 3.2,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+
+//     r1.area();
+//     s1.area();
+
+//     r1.perimeter();
+//     s1.perimeter();
+// }
+
+// struct drawing_info {
+//     line_width: u8,
+//     color: String,
+// }
+// struct Square {
+//     side: f32,
+//     line_width: u8,
+//     color: String,
+//     //info: drawing_info,
+// }
+
+// struct Rectangle {
+//     length: f32,
+//     width: f32,
+//     line_width: u8,
+//     color: String,
+//     // info: drawing_info,
+// }
+
+// impl Square {
+//     fn calculate_area(&self) {
+//         println!("The area is: {}", self.side * self.side);
+//     }
+// }
+
+// impl Rectangle {
+//     fn area(&self) -> f32 {
+//         self.length * self.width
+//     }
+// }
+
+// TRAIT BOUNDS
+// struct Square {
+//     side: f32,
+//     line_width: u8,
+//     color: String,
+// }
+
+// struct Rectangle {
+//     length: f32,
+//     width: f32,
+//     line_width: u8,
+//     color: String,
+// }
+
+// trait Shape {
+//     fn area(&self) -> f32;
+//     fn perimeter(&self) -> f32 {
+//         println!("Perimeter not implemented, returning dummy value");
+//         0.0
+//     }
+// }
+
+// impl Shape for Rectangle {
+//     fn area(&self) -> f32 {
+//         let area_of_rect = self.length * self.width;
+//         println!("Rectangle area: {}", area_of_rect);
+//         area_of_rect
+//     }
+//     fn perimeter(&self) -> f32 {
+//         let perimeter_of_rect = 2.0 * (self.length + self.width);
+//         println!("Rectangle Perimeter: {}", perimeter_of_rect);
+//         perimeter_of_rect
+//     }
+// }
+
+// impl Shape for Square {
+//     fn area(&self) -> f32 {
+//         let area_of_square = self.side * self.side;
+//         println!("Square area: {}", area_of_square);
+//         area_of_square
+//     }
+// }
+
+// fn shape_properties<T>(object: T)
+// where
+//     T: Shape,
+// {
+//     object.area();
+//     object.perimeter();
+// }
+
+// fn returns_shape() -> impl Shape {
+//     let sq = Square {
+//         side: 5.0,
+//         line_width: 5,
+//         color: String::from("Red"),
+//     };
+//     sq
+//     // let rect = Rectangle {
+//     //     length: 5.0,
+//     //     width: 10.0,
+//     //     line_width: 5,
+//     //     color: String::from("Red"),
+//     // };
+
+//     // let x = false;
+//     // if x {
+//     //     sq
+//     // } else {
+//     //     rect
+//     // }
+// }
+
+// struct Circle {
+//     radius: f32,
+// }
+// fn main() {
+//     let r1 = Rectangle {
+//         width: 5.0,
+//         length: 4.0,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+
+//     let s1 = Square {
+//         side: 3.2,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+
+//     let c1 = Circle { radius: 5.0 };
+//     shape_properties(r1);
+//     shape_properties(s1);
+//     // shape_properties(c1); // Trait bound not satisfied
+// }
+
+// SUPER TRAIT
+// struct Square {
+//     side: f32,
+//     line_width: u8,
+//     color: String,
+// }
+
+// struct Rectangle {
+//     length: f32,
+//     width: f32,
+//     line_width: u8,
+//     color: String,
+// }
+
+// trait Draw {
+//     fn draw_object(&self);
+// }
+// trait Shape: Draw + OtherTrait + SomeOtherTrait {
+//     fn area(&self) -> f32;
+//     fn perimeter(&self) -> f32 {
+//         println!("Perimeter not implemented, returning dummy value");
+//         0.0
+//     }
+// }
+
+// trait OtherTrait {}
+// impl OtherTrait for Rectangle {}
+// impl OtherTrait for Square {}
+
+// trait SomeOtherTrait {}
+// impl SomeOtherTrait for Rectangle {}
+// impl SomeOtherTrait for Square {}
+
+// impl Shape for Rectangle {
+//     fn area(&self) -> f32 {
+//         let area_of_rect = self.length * self.width;
+//         println!("Rectangle area: {}", area_of_rect);
+//         area_of_rect
+//     }
+//     fn perimeter(&self) -> f32 {
+//         let perimeter_of_rect = 2.0 * (self.length + self.width);
+//         println!("Rectangle Perimeter: {}", perimeter_of_rect);
+//         perimeter_of_rect
+//     }
+// }
+
+// impl Shape for Square {
+//     fn area(&self) -> f32 {
+//         let area_of_square = self.side * self.side;
+//         println!("Square area: {}", area_of_square);
+//         area_of_square
+//     }
+// }
+
+// impl Draw for Square {
+//     fn draw_object(&self) {
+//         println!("Drawing Square");
+//     }
+// }
+// impl Draw for Rectangle {
+//     fn draw_object(&self) {
+//         println!("Drawing Rectangle");
+//     }
+// }
+// fn shape_properties<T>(object: T)
+// where
+//     T: Shape,
+// {
+//     object.area();
+//     object.perimeter();
+// }
+
+// fn returns_shape() -> impl Shape {
+//     let sq = Square {
+//         side: 5.0,
+//         line_width: 5,
+//         color: String::from("Red"),
+//     };
+//     sq
+// }
+
+// fn main() {
+//     let r1 = Rectangle {
+//         width: 5.0,
+//         length: 4.0,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+
+//     let s1 = Square {
+//         side: 3.2,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+
+//     shape_properties(r1);
+//     shape_properties(s1);
+// }
+// fn shape_properties_dynamic(object: Box<dyn Shape>) {
+//     object.area();
+//     object.perimeter();
+//     }
+// fn returns_shape(dimension: Vec<f32>) -> Box<dyn Shape> {
+//     if dimension.len() == 1 {
+//         let sq = Square {
+//             side: dimension[0],
+//             line_width: 5,
+//             color: String::from("Red"),
+//         };
+//         Box::new(sq)
+//     } else {
+//         let rect = Rectangle {
+//             length: dimension[0],
+//             width: dimension[1],
+//             line_width: 5,
+//             color: String::from("Red"),
+//         };
+//         Box::new(rect)
+//     }
+// }
+// fn main() {
+//     let r1 = Rectangle {
+//         width: 5.0,
+//         length: 4.0,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+//     let s1 = Square {
+//         side: 3.2,
+//         line_width: 1,
+//         color: String::from("Red"),
+//     };
+//     shape_properties_dynamic(Box::new(r1));
+//     shape_properties_dynamic(Box::new(s1));
+// }
+
+// trait Vehicle {
+//     fn start_engine(&self) -> String;
+//     fn drive(&self) -> String;
+// }
+
+// struct Car;
+
+// struct Bicycle;
+
+// impl Vehicle for Car {
+//     fn start_engine(&self) -> String {
+//         "🚗 Engine started".to_string()
+//     }
+
+//     fn drive(&self) -> String {
+//         "🚗 Driving the car".to_string()
+//     }
+// }
+
+// impl Vehicle for Bicycle {
+//     fn start_engine(&self) -> String {
+//         "🚲 No engine to start for a bicycle".to_string()
+//     }
+
+//     fn drive(&self) -> String {
+//         "🚲 Pedaling the bicycle".to_string()
+//     }
+// }
+
+// fn get_vehicle(vehicle_type: &str) -> Box<dyn Vehicle> {
+//     // This line needs a fix
+//     match vehicle_type {
+//         "car" => Box::new(Car),
+//         "bicycle" => Box::new(Bicycle),
+//         _ => panic!("No vehicle of that type available"),
+//     }
+// }
+
+// fn operate_vehicle(driver: &dyn Vehicle) {
+//     // This line needs a fix
+//     println!("{}", driver.start_engine());
+//     println!("{}", driver.drive());
+// }
+
+// fn main() {
+//     // Do not change code in main
+//     let my_vehicle = get_vehicle("car");
+//     operate_vehicle(my_vehicle.as_ref());
+
+//     let my_vehicle = get_vehicle("bicycle");
+//     operate_vehicle(my_vehicle.as_ref());
+// }
+
+// DERIVED TRAITS and MARKER TRAITS
+// trait Properties: PartialEq + Default + Clone {}
+// #[derive(Debug, PartialEq, Default, Clone)]
+// struct Student {
+//     name: String,
+//     age: u8,
+//     sex: char,
+// }
+// impl Properties for Student {}
+// fn main() {
+//     let s_1 = Student {
+//         name: String::from("ABC"),
+//         age: 35,
+//         sex: 'M',
+//     };
+
+//     let s_2 = Student {
+//         name: String::from("XYZ"),
+//         age: 40,
+//         sex: 'M',
+//     };
+
+//     println!("Student: {:?}", s_1);
+//     println!("s_1 and s_2 are equal: {}", s_1 == s_2);
+// }
+
+//ASSOCIATED TRAITS
+
+// #[derive(Debug)]
+// struct Km {
+//     value: u32,
+// }
+
+// #[derive(Debug)]
+// struct Kmh {
+//     value: u32,
+// }
+
+// #[derive(Debug)]
+// struct Miles {
+//     value: u32,
+// }
+
+// #[derive(Debug)]
+// struct Mph {
+//     value: u32,
+// }
+
+
+// trait DistanceThreeHours {
+//     type Distance;
+//     fn distance_in_three_hours(&self) -> Self::Distance;
+// }
+
+// impl DistanceThreeHours for Kmh {
+//     type Distance = Km;
+//     fn distance_in_three_hours(&self) -> Self::Distance {
+//         Self::Distance {
+//             value: self.value * 3,
+//         }
+//     }
+// }
+
+// impl DistanceThreeHours for Mph {
+//     type Distance = Miles;
+//     fn distance_in_three_hours(&self) -> Self::Distance {
+//         Self::Distance {
+//             value: self.value * 3,
+//         }
+//     }
+// }
+// fn main() {
+//     let speed_Kmh = Kmh { value: 90 };
+//     let distance_Km = speed_Kmh.distance_in_three_hours();
+
+//     println!(
+//         "At {:?}, you will travel {:?} in 3 hours",
+//         speed_Kmh, distance_Km
+//     );
+
+//     let speed_Mph = Mph { value: 90 };
+//     let distance_Miles = speed_Mph.distance_in_three_hours();
+//     println!(
+//         "At {:?}, you will travel {:?}, in 3 hours",
+//         speed_Mph, distance_Miles
+//     );
+// }
+
+struct User {
+    name: String,
+    age: u8,
+    salary: u32
+}
+
+fn main() {
+    let person_1 = User {
+        name: String::from("someone"),
+        age: 35,
+        salary: 40_000,
+    };
+
+    let validate_user = |name: &str| name.len() != 0;
+    println!("User Validity {}", validate_user(&person_1.name));
+}
