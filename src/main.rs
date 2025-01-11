@@ -1257,19 +1257,1137 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     );
 // }
 
-struct User {
-    name: String,
-    age: u8,
-    salary: u32
+//CLOSURES
+// struct User {
+//     name: String,
+//     age: u8,
+//     salary: u32
+// }
+// fn is_valid_user<V1, V2>(name: &str, age: u8, simple_validator: V1, advance_validator: V2) -> bool
+// where
+//     V1: FnOnce(&str) -> bool,
+//     V2: Fn(u8) -> bool,
+// {
+//     simple_validator(name) && advance_validator(age)
+// }
+
+// fn main() {
+//     let person_1 = User {
+//         name: String::from("someone"),
+//         age: 35,
+//         salary: 40_000,
+//     };
+
+//     let validate_user = |name: &str| name.len() != 0;
+//     println!("User Validity {}", validate_user(&person_1.name));
+// }
+
+// //It must not contain any generics. 
+
+// fn add(x: u32, y: u32) -> u32 {
+//     x + y
+// }
+
+// fn square(x: u32) -> u32 {
+//     x * x
+// }
+
+// fn sum_of_squares(num: u32, sq: fn(u32) -> u32, add: fn(u32, u32) -> u32) -> u32 { 
+//     let mut result = 0;
+//     for i in 1..=num {
+//         result = add(result, sq(i));
+//     }
+//     result
+// }
+
+// fn main() {
+//     let num = 4;
+//     let sum = sum_of_squares(num, square, add);
+//     println!("Sum of squares from 1 to {} = {}", num, sum);
+// }
+
+//ITERATOR
+    //trait Iterator {
+    //     type Item;
+    //     fn next(&mut self) -> Option<Self::Item>;
+    // }
+
+// struct Employee {
+//     name: String,
+//     salary: u16
+// }
+// struct Employee_records {
+//     employee_db: Vec<Employee>,
+// }
+
+// impl Iterator for Employee_records {
+//     type Item = String;
+//     fn next(&mut self) -> Option<Self::Item> {
+//         if self.employee_db.len() != 0 {
+//             let result = self.employee_db[0].name.clone();
+//             self.employee_db.remove(0);
+//             Some(result)
+//         } else {
+//             None
+//         }
+//     }
+// }
+// fn main() {
+//     let mut emp_1 = Employee{
+//         name: String::from("Johny"),
+//         salary: 40_000,
+//     };
+//     let mut emp_2 = Employee {
+//         name: String::from("Papa"),
+//         salary: 50_000
+//     };
+//     let mut emp_db = Employee_records {
+//         employee_db: vec![emp_1, emp_2]
+//     }; 
+//     // println!("{:?}", emp_db.next());
+//     // println!("{:?}", emp_db.next());
+//     // println!("{:?}", emp_db.next());
+
+//     for employee in emp_db {
+//         println!("{employee}");
+//     }
+//     // for loop is smart enough to turn it into an iterator producing item of type string...
+// }
+
+// use std::vec;
+
+// //IntoIterator
+// /*
+//  trait IntoIterator {
+//     type Item;
+//     type IntoIter: Iterator;
+//     fn into_iter(self) -> Self::IntoIter;
+// }
+// */
+// trait IntoIterator {
+//     type Item;
+//     type IntoIter: Iterator;
+//     fn into_iter(self) -> Self::IntoIter;
+// }
+
+// struct Book {
+//     title: String,
+//     author: String,
+//     genre: String,
+// }
+
+// // struct BookIterator {
+// //     properties: Vec<String>,
+// // }
+
+// // impl Iterator for BookIterator {
+// //     type Item = String;
+
+// //     fn next(&mut self) -> Option<Self::Item> {
+// //         if !self.properties.is_empty() {
+// //             Some(self.properties.remove(0))
+// //         } else {
+// //             None
+// //         }
+// //     }
+// // }
+
+// impl IntoIterator for Book {
+//     type Item = String;
+//     // type IntoIter = BookIterator;
+
+//     // fn into_iter(self) -> Self::IntoIter {
+//     //     BookIterator {
+//     //         properties: vec![self.title, self.author, self.genre],
+//     //     }
+//     // }
+
+//     type IntoIter = std::vec::IntoIter<Self::Item>;
+//     fn into_iter(self) -> Self::IntoIter {
+//         vec![self.title, self.author, self.genre].into_iter()
+//     }
+// }
+
+// fn main() {
+//     let book = Book {
+//         title: "Digital Image Processing".to_string(),
+//         author: "Gonzales".to_string(),
+//         genre: "Science Book".to_string(),
+//     };
+
+//     let mut book_iterator = book.into_iter();
+
+//     // println!("{:?}", book_iterator.next());
+//     // println!("{:?}", book_iterator.next());
+//     // println!("{:?}", book_iterator.next());
+//     // println!("{:?}", book_iterator.next());
+
+//     for book_info in book_iterator {
+//         println!("{book_info}");
+//     }
+// }
+
+// use std::collections::HashMap;
+
+// // ITERATING THROUGH COLLECTIONS
+// fn main() {
+//     let mut vec_1 = vec![45, 30, 85, 90, 41, 39];
+//     let mut vec_1_iter = vec_1.into_iter();
+//     let value_1 = vec_1_iter.next();
+//     print!("{:?}", value_1);
+
+//     let mut person: HashMap<String, i32> = HashMap::new();
+//     person.insert("Hannash".to_string(), 40);
+//     person.insert("Joseph".to_string(), 44);
+//     person.insert("Sara".to_string(), 55);
+
+// }
+
+// fn main() {
+//     let words = vec!["apple", "banana", "grape", "orange", "pear"];
+//     // let mut result: Vec<String> = vec![];
+
+//     // for word in words {
+//     //     if word.starts_with("a") || word.starts_with("b") {
+//     //         let uppercase_word = word.to_uppercase();
+//     //         result.push(uppercase_word);
+//     //     }
+//     // }
+//     // println!("Result: {:?}", result);
+
+//     // let result: Vec<String> = words
+//     //     .into_iter()
+//     //     .filter(|&word| word.starts_with("a") || word.starts_with("b"))
+//     //     .map(|word| word.to_uppercase())
+//     //     .collect::<Vec<String>>();
+
+//     // println!("Result: {:?}", result);
+
+//     // let result = words.into_iter().filter(|&word| word.starts_with("a") ||
+//     // word.starts_with("b")).map(|word| word.to_uppercase()).collect::<Vec<String>>();
+//     // print!("{:?}",result);
+
+//     let some_product = Some("laptop");
+//     let mut products = vec!["cellphone", "battery", "charger"];
+
+//     products.extend(some_product);
+//     println!("{:?}", products);
+
+//     let products_iter = products.iter().chain(some_product.iter());
+
+//     for prod in products_iter {
+//         println!("{:?} ", prod);
+//     }
+// // ------ Use Case 3 -----
+// let products = vec![Some("charger"), Some("battery"), None, Some("cellphone")];
+
+// Solution 1;
+// let mut prod_without_none = Vec::new();
+// for p in products {
+//     if p.is_some() {
+//         prod_without_none.push(p.unwrap());
+//     }
+// }
+
+// Solution 2:
+// let prod_without_none = products
+//     .into_iter()
+//     .filter(|x| x.is_some())
+//     .map(|x| x.unwrap())
+//     .collect::<Vec<&str>>();
+
+// Solution 3:
+// let prod_wihtout_none: Vec<&str> = products.into_iter().flatten().collect();
+// println!("{:?}", prod_wihtout_none);
+//}
+
+// fn main() {
+//     // Example 1:
+//     let i = 5;
+//     let j = i;
+//     println!("{i}");
+
+//     // Example 2:
+//     let str_1 = String::from("abc");
+//     let str_2 = str_1;
+//     //println!("str_1: {str_1}");
+
+//     // Example 3:
+//     let str_1 = String::from("abc");
+//     str_fn(str_1);
+//     //let str_2 = str_1;
+
+//     // Example 4:
+//     let i;
+//     {
+//         let j = 5;
+//         i = &j;
+//         println!("i: {i}");
+//     }
+
+//     // Example 5:
+//     let mut vec_1 = vec![6, 5, 8, 9];
+//     let ref_1 = &vec_1;
+//     println!("ref 1: {:?}", ref_1);
+//     let ref_2 = &mut vec_1;
+//     ref_2.push(3);
+//     println!("ref 2: {:?}", ref_2);
+// }
+
+// fn str_fn(s: String) {
+//     println!("s: {s}");
+// }
+
+
+//  fn main() {
+//     let int1 = 5;
+//     let int2 = 10;
+//     let picked_value = picking_int(&int1, &int2);
+//     println!("{picked_value}");
+// }
+
+// fn picking_int<'a>(i: &'a i32, j: &'a i32) -> &'a i32 {
+//     if rand::random() {
+//         i
+//     } else {
+//         j
+//     }
+// }
+// -------------------------------------------
+// 	        Lifetime Elision
+// -------------------------------------------
+
+/*
+1. Each parameter that is a reference, gets its own lifetime parameter.
+2. If there is exactly one input lifetime parameter, that lifetime is assigned to
+    all output lifetime parameters.
+3. If there are multiple input lifetime parameters, but one of them is &self or &mut self,
+   the lifetime of self is assigned to all output lifetime parameters.
+*/
+
+// // Example 1:
+// fn main() {
+//     let str_1 = "some str";
+
+//     let recieved_str = return_str(&str_1);
+// }
+// // Code with Lifetime Elision
+// fn return_str(s_1: &str) -> &str {
+//     s_1
+// }
+
+// // Code without Lifetime Elision
+// fn return_str<'a>(s_1: &'a str) -> &'a str {
+//     s_1
+// }
+
+// // Example 2:
+//  fn main() {
+//     let str_1 = "some str";
+//     let str_2 = "other str";
+//     let recieved_str = return_str(&str_1, &str_2);
+// }
+
+// fn return_str<'a, 'b>(s_1: &'a str, s_2: &'b str) -> &'a str {
+//     s_1
+// }
+
+//LIFETIME IN STRUCTS
+// struct ArrayProcessor<'a>{
+//     data: &'a[i32],
+// }
+
+// fn main() {}
+
+// BOX SMART POINTER
+// -------------------------------------------
+
+//       Simple Pointer          ||         Smart Pointers
+// ----------------------------------------------------------------------
+// Just stores memory address    ||   Special capabilities
+// Indicated by &                ||   Not just simple references
+// Also called references        ||
+// No special capabilities       ||
+
+// fn main() {
+//     let x = 0.625;
+//     let y = Box::new(x);
+// }
+
+/*
+enum Conveyance {
+    Car(i32),
+    Train(i32),
+    Air(i32),
+    Walk
+}
+*/
+
+// #[derive(Debug)]
+// enum List {
+//     Cons(i32, Box<List>),
+//     Nil,
+// }
+
+// fn main() {
+//     // let x = 0.625;
+//     // let y = Box::new(x);
+//     // let z = &x;
+
+//     let list = List::Cons(
+//         1,
+//         Box::new(List::Cons(2, Box::new(List::Cons(3, Box::new(List::Nil))))),
+//     );
+
+//     println!("{:?}", list);
+// }
+
+// #[derive(Debug)]
+// enum List {
+//     Cons(i32, Box<List>),
+//     Nil,
+// }
+
+// fn main() {
+//     let list = List::Cons(
+//         1,
+//         Some(Box::new(List::Cons(2, Some(Box::new(List::Cons(3, None)))))),
+//     );
+
+//     println!("{:?}", list);
+// let data: Vec<Box<dyn Storage>> = vec![Box::new(data_3), data_4, data_5];
+
+// }
+
+//REFERENCE COUNTING SMART POINTER
+
+// use std::rc::Rc;
+// enum List {
+//     Cons(i32, Option<Rc<List>>),
+// }
+// fn main() {
+//     let a = Rc::new(List::Cons(1, Some(Rc::new(List::Cons(2,None)))));
+//     let b = List::Cons(3, Some(Rc::clone(&a)));
+//     let c = List::Cons(4, Some(Rc::clone(&a)));
+//     println!("Reference count after a: {}", Rc::strong_count(&a));
+// }
+
+// REF CELL SMART POINTER
+// use std::{cell::RefCell, rc::Rc};
+
+// fn main() {
+//     // Example 1: Borrowing rules at run time
+//     // let mut x = 50;
+//     // let x1 = &x;
+//     // let x2 = &x;
+//     // let x3 = &mut x;
+
+//     // println!("{} {} ", x1, x2);
+
+//     let a = RefCell::new(10);
+
+//     //{ // add the scope later on
+//     let b = a.borrow();
+//     let c = a.borrow();
+//     //}
+
+//     drop(b); // add later on, remove after adding the scope above
+//     drop(c); // add later on
+//     let d = a.borrow_mut();
+//     // drop(d) // add later on
+//     //println!("{} {}", b, c); // later on delete this
+//     //println!("Value of a is : {:?}", a); // add later on
+
+
+//     // Example 2: Interior mutability
+//     // let x = 32;
+//     // let x1 = &mut x;
+
+//     let a = RefCell::new(10);
+//     //let c = *a; // add later on
+//     let mut b = a.borrow_mut();
+//     *b = 15;
+
+//     drop(b); // add later on
+//     println!("{:?}", a);
+
+//     // Example 3 
+//     let a = Rc::new(RefCell::new(String::from("c++")));
+//     let b = Rc::clone(&a);
+
+//     *b.borrow_mut() = String::from("rust");
+//     println!("{:?}", a);
+// }
+
+// use std::{cell::RefCell, rc::Rc};
+
+// #[derive(Debug)]
+// struct File {
+//     active_user: u32,
+// }
+
+// #[derive(Debug)]
+// struct User {
+//     file: Rc<RefCell<File>>,
+// }
+
+// fn main() {
+//     let mut txt_file = Rc::new(RefCell::new((File { active_user: 0 })));
+
+//     let mut user_1 = User {
+//         file: Rc::clone(&txt_file),
+//     };
+//     user_1.file.borrow_mut().active_user += 1;
+//     println!("Active users: {:?}", txt_file.borrow().active_user);
+
+//     let mut user_2 = User {
+//         file: Rc::clone(&txt_file),
+//     };
+//     user_2.file.borrow_mut().active_user += 1;
+//     println!("Active users: {:?}", txt_file.borrow().active_user);
+// }
+// use std::rc::Rc;
+// #[derive(Debug)]
+// struct ListNode<T> {
+//     value: T,
+//     next: Option<Rc<ListNode<T>>>,
+// }
+
+// fn main() {
+//     let node_3 = Rc::new(ListNode {
+//         value: 3,
+//         next: None,
+//     });
+
+//     let node_2 = Rc::new(ListNode {
+//         value: 2,
+//         next: Some(Rc::clone(&node_3)),
+//     });
+
+//     let node_1 = Rc::new(ListNode {
+//         value: 1,
+//         next: Some(Rc::clone(&node_2)),
+//     });
+
+//     assert_eq!(Rc::strong_count(&node_1), 1); // put a value inplace of ?
+//     assert_eq!(Rc::strong_count(&node_2), 2); // put a value inplace of ?
+//     assert_eq!(Rc::strong_count(&node_3), 2); // put a value inplace of ?
+// }
+
+// fn main() {
+
+//     let multiplier = 2;
+
+//     let adder = 5;
+
+//     let transform = |x: i32| -> i32 {
+
+//         x * multiplier + adder
+
+//     };
+
+//     let result = transform(10);
+
+//     println!("Result: {}", result);
+
+// }
+
+// LINKED LIST
+// #[derive(Debug)]
+// struct Linklist {
+//     head: pointer,
+// }
+
+// #[derive(Debug)]
+// struct Node {
+//     element: i32,
+//     next: pointer,
+// }
+
+// type pointer = Option<Box<Node>>;
+// fn main() {
+    // let list = Node {
+    //     element: 1,
+    //     next: None,
+    // };
+
+    // let list = Node {
+    //     element: 1,
+    //     next: Some(Box::new(Node {
+    //         element: 2,
+    //         next: None,
+    //     })),
+    // };
+
+    // let list = Linklist {
+    //     head: Some(Node {
+    //         element: 1,
+    //         next: None,
+    //     }),
+    // };
+
+    // let list = Linklist {
+    //     head: Some(Node {
+    //         element: 1,
+    //         next: Some(Box::new(Node {
+    //             element: 2,
+    //             next: Some(Box::new(Node {
+    //                 element: 3,
+    //                 next: None,
+    //             })),
+    //         })),
+    //     }),
+    // };
+
+    // let list = Linklist { head: None };
+
+    // let list = Linklist {
+    //     head: Some(Box::new(Node {
+    //         element: 100,
+    //         next: Some(Box::new(Node {
+    //             element: 200,
+    //             next: None,
+    //         })),
+    //     })),
+    // };
+
+    // println!("{:?}", &list.head);
+// }
+
+// #[derive(Debug)]
+// struct LinkList {
+//     head: pointer,
+// }
+
+// type pointer = Option<Box<Node>>;
+// #[derive(Debug)]
+// struct Node {
+//     element: i32,
+//     next: pointer,
+// }
+// impl LinkList {
+//     fn new() -> LinkList {
+//         LinkList { head : None}
+//     }
+//     fn add(&mut self, element: i32) {}
+// }
+// fn main() {
+
+// }
+// #[derive(Debug)]
+// struct Linklist {
+//     head: pointer,
+// }
+
+// #[derive(Debug)]
+// struct Node {
+//     element: i32,
+//     next: pointer,
+// }
+// type pointer = Option<Box<Node>>;
+
+// impl Linklist {
+//     fn new() -> Linklist {
+//         Linklist { head: None }
+//     }
+
+//     fn add(&mut self, element: i32) {
+//         // match self.head {
+//         //     None => {
+//         //         let new_node = Some(Box::new(Node {
+//         //             element: element,
+//         //             next: None,
+//         //         }));
+//         //         self.head = new_node;
+//         //     }
+//         //     Some(previous_head) => {
+//         //         let new_node = Some(Box::new(Node {
+//         //             element: element,
+//         //             next: Some(previous_head),
+//         //         }));
+//         //         self.head = new_node;
+//         //     }
+//         // }
+
+//         // fn take<T>(dest: &mut T) -> T
+//         let previous_head = self.head.take();
+//         let new_head = Some(Box::new(Node {
+//             element: element,
+//             next: previous_head,
+//         }));
+//         self.head = new_head;
+//     }
+
+//     fn remove(&mut self) -> Option<i32> {
+//         match self.head.take() {
+//             Some(previous_head) => {
+//                 self.head = previous_head.next;
+//                 Some(previous_head.element)
+//             }
+//             None => None,
+//         }
+//     }
+
+//     fn print(&self) {
+//         let mut list_traversal = &self.head;
+//         while !list_traversal.is_none() {
+//             println!("{:?}", list_traversal.as_ref().unwrap().element);
+//             list_traversal = &list_traversal.as_ref().unwrap().next;
+//         }
+//     }
+// }
+// fn main() {
+//     let mut list = Linklist::new();
+//     list.add(5);
+//     list.add(7);
+//     list.add(10);
+//     list.add(15);
+//     list.add(20);
+
+//     //println!("List: {:?}", list);
+//     list.print();
+//     println!("{}", list.remove().unwrap());
+// }
+
+//DOUBLY LINKED LIST
+// use std::{cell::RefCell, rc::Rc};
+// #[derive(Debug)]
+// struct Doubly_Linklist {
+//     head: pointer,
+//     tail: pointer,
+// }
+
+// #[derive(Debug)]
+// struct Node {
+//     element: i32,
+//     next: pointer,
+//     prev: pointer,
+// }
+
+// type pointer = Option<Rc<RefCell<Node>>>;
+
+// impl Doubly_Linklist {
+//     fn new() -> Self {
+//         Doubly_Linklist {
+//             head: None,
+//             tail: None,
+//         }
+//     }
+
+//     fn add(&mut self, element: i32) {
+//         let new_head = Node::new(element);
+
+//         match self.head.take() {
+//             Some(old_head) => {
+//                 old_head.borrow_mut().prev = Some(new_head.clone());
+//                 new_head.borrow_mut().next = Some(old_head.clone());
+//                 self.head = Some(new_head);
+//             }
+
+//             None => {
+//                 self.tail = Some(new_head.clone());
+//                 self.head = Some(new_head);
+//             }
+//         }
+//     }
+
+//     // Case: 1
+//     // -----------------------
+//     //         Head        Tail
+//     // None <-- 1 --> 2 --> 3 --> None
+//     // None     1 <-- 2 <-- 3     None
+//     // -----------------------
+
+//     // Case: 1 (After Removal)
+//     // -----------------------
+//     //       Head  Tail
+//     // None <-- 2 --> 3 --> None
+//     // None     2 <-- 3     None
+//     // -----------------------
+
+//     // Case: 2
+//     // -----------------------
+//     //       Head
+//     //       Tail
+//     // None <-- 1 --> None
+//     // -----------------------
+
+//     // Case: 2 (After Removal)
+//     // -----------------------
+//     //       Head = None
+//     //       Tail = None
+//     // -----------------------
+
+//     fn remove(&mut self) -> Option<i32> {
+//         if self.head.is_none() {
+//             println!("List is empty so we can not remove");
+//             None
+//         } else {
+//             let removed_val = self.head.as_ref().unwrap().borrow().element;
+//             self.head
+//                 .take()
+//                 .map(|old_head| match old_head.borrow_mut().next.take() {
+//                     Some(new_head) => {
+//                         new_head.borrow_mut().prev = None;
+//                         self.head = Some(new_head);
+//                         self.head.clone()
+//                     }
+//                     None => {
+//                         self.tail = None;
+//                         println!("List is empty after removal");
+//                         None
+//                     }
+//                 });
+//             Some(removed_val)
+//         }
+//     }
+
+//     fn print(&self) {
+//         let mut traversal = self.head.clone();
+//         while !traversal.is_none() {
+//             println!("{}", traversal.as_ref().unwrap().borrow().element);
+//             traversal = traversal.unwrap().borrow().next.clone();
+//         }
+//     }
+// }
+
+// impl Node {
+//     fn new(element: i32) -> Rc<RefCell<Node>> {
+//         Rc::new(RefCell::new(Node {
+//             element: element,
+//             next: None,
+//             prev: None,
+//         }))
+//     }
+// }
+// fn main() {
+//     let mut list1 = Doubly_Linklist::new();
+
+//     list1.add(30);
+//     list1.add(32);
+//     list1.add(34);
+//     list1.add(36);
+//     list1.print();
+
+//     list1.remove();
+//     println!("After Removal");
+//     list1.print();
+// }
+
+// REFERENCE CYCLE
+// use std::cell::RefCell; 
+// use std::rc::{Rc, Weak}; 
+// #[derive(Debug)] 
+// struct Node {
+//     next: Option<Weak<RefCell<Node>>>, 
+// }
+
+// impl Drop for Node {
+//     fn drop(&mut self) {
+//         println!("Dropping {:?}", self);
+//     }
+// }
+// fn main() {    
+//     let a = Rc::new(RefCell::new(Node {next: None} )); 
+//     println!("a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a)); 
+
+//     let b = Rc::new(RefCell::new(Node{next: Some(Rc::downgrade(&a))})); 
+//     println!("B is created: \n a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a));  
+//     println!("b strong count: {:?}, b weak count: {:?}", Rc::strong_count(&b), Rc::weak_count(&b));
+
+//     let c = Rc::new(RefCell::new(Node {next: Some(Rc::downgrade(&b))})); 
+
+//     (*a).borrow_mut().next = Some(Rc::downgrade(&c)); 
+
+//     println!("After creating cycle: \n a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a)); 
+//     println!("b strong count: {:?}, b weak count: {:?}", Rc::strong_count(&b), Rc::weak_count(&b)); 
+//     println!("c strong count: {:?}, c weak count: {:?}", Rc::strong_count(&c), Rc::weak_count(&c)); 
+
+//     println!("a {:?}", a);
+
+
+// }
+
+
+// use std::borrow::Borrow; 
+// use std::rc::{Rc, Weak}; 
+// use std::cell::{RefCell, Ref}; 
+
+// #[derive(Debug)]
+// struct Node {
+//     value: i32, 
+//     parent: RefCell<Weak<Node>>,
+//     children: RefCell<Vec<Rc<Node>>>,
+// }
+// fn main() { 
+//     let leaf  = Rc::new(Node {
+//         value: 3, 
+//         parent: RefCell::new(Weak::new()), 
+//         children: RefCell::new(vec![]),
+//     }); 
+
+//     let branch = Rc::new(Node {
+//         value: 5, 
+//         parent: RefCell::new(Weak::new()), 
+//         children: RefCell::new(vec![Rc::clone(&leaf)]), 
+//     });
+//     *leaf.parent.borrow_mut() = Rc::downgrade(&branch);
+
+// }
+
+//INITIALIZING STRUCT INSTANCE
+
+// use learning_rust::Student;
+// fn main() {
+//     // let std_1 = Student {
+//     //     age: 20,
+//     //     name: "Joseph".to_string(),
+//     // };
+//     let std_1 = Student::new("Joseph".to_string()).unwrap_or_default();
+//     println!("{:?}", std_1);
+
+//     let std_2 = Student::default();
+//     println!("{:?}", std_2);
+
+//     let std_3 = Student {
+//         age: 12,
+//         ..Default::default()
+//     };
+// }
+
+// #[derive(Debug,Default,Clone)]
+
+// -------------------------------------------
+// 			Builder Pattern
+// -------------------------------------------
+
+// #[derive(Debug, Default, Clone)]
+// struct Customer {
+//     name: String,
+//     username: String,
+//     membership: Membershiptype,
+//     gender: char,
+//     country: String,
+//     age: u8,
+// }
+
+// #[derive(Debug, Clone)]
+// enum Membershiptype {
+//     new,
+//     causual,
+//     loyal,
+// }
+
+// impl Default for Membershiptype {
+//     fn default() -> Self {
+//         Membershiptype::new
+//     }
+// }
+
+// impl Customer {
+//     fn new(name: String) -> CustomerBuilder {
+//         CustomerBuilder {
+//             name: name,
+//             ..Default::default() // username: None,
+//                                  // membership: None,
+//                                  // gender: None,
+//                                  // country: None,
+//                                  // age: None,
+//         }
+//     }
+//     // fn new(name: String) -> Self {
+//     //     Customer {
+//     //         name: name,
+//     //         ..Default::default()
+//     //     }
+//     // }
+
+//     // fn new_2(name: String, username: String) -> Self {
+//     //     Customer {
+//     //         name: name,
+//     //         username: username,
+//     //         ..Default::default()
+//     //     }
+//     // }
+
+//     // fn new_3(name: String, username: String, membership: Membershiptype) -> Self {
+//     //     Customer {
+//     //         name: name,
+//     //         username: username,
+//     //         membership: membership,
+//     //         ..Default::default()
+//     //     }
+//     // }
+// }
+
+// #[derive(Default)]
+// struct CustomerBuilder {
+//     name: String,
+//     username: Option<String>,
+//     membership: Option<Membershiptype>,
+//     gender: Option<char>,
+//     country: Option<String>,
+//     age: Option<u8>,
+// }
+
+// impl CustomerBuilder {
+//     fn username(&mut self, username: String) -> &mut Self {
+//         self.username = Some(username);
+//         self
+//     }
+
+//     fn membership(&mut self, membership: Membershiptype) -> &mut Self {
+//         self.membership = Some(membership);
+//         self
+//     }
+
+//     fn gender(&mut self, gender: char) -> &mut Self {
+//         self.gender = Some(gender);
+//         self
+//     }
+//     fn country(&mut self, country: String) -> &mut Self {
+//         self.country = Some(country);
+//         self
+//     }
+//     fn age(&mut self, age: u8) -> &mut Self {
+//         self.age = Some(age);
+//         self
+//     }
+//     fn build(&mut self) -> Customer {
+//         Customer {
+//             name: self.name.clone(),
+//             username: self.username.clone().unwrap_or_default(),
+//             membership: self.membership.clone().unwrap_or_default(),
+//             gender: self.gender.unwrap_or_default(),
+//             country: self.country.clone().unwrap_or_default(),
+//             age: self.age.unwrap_or_default(),
+//         }
+//     }
+// }
+// fn main() {
+//     // let new_user = Customer::new("Nouman".to_string());
+//     // let user_with_login = Customer::new_2("Joseph".to_string(), "joe123".to_string());
+//     // let user_with_membership = Customer::new_3(
+//     //     "Micheal".to_string(),
+//     //     "micheal2000".to_string(),
+//     //     Membershiptype::loyal,
+//     // );
+
+//     let new_user = Customer::new("Nouman".to_string()).build();
+//     let user_with_login = Customer::new("Joseph".to_string())
+//         .username("joe123".to_string())
+//         .build();
+
+//     let user_with_membership = Customer::new("Micheal".to_string())
+//         .username("micheal2000".to_string())
+//         .membership(Membershiptype::loyal)
+//         .build();
+// }
+// -------------------------------------------
+//           	- Simplifying Structs
+// -------------------------------------------
+/*
+// Starting code
+struct A {
+    f1: u32,
+    f2: u32,
+    f3: u32,
+}
+*/
+
+struct A {
+    f1: u32,
+    f2: u32,
+    f3: u32,
+    // b: B,
+    // c: C,
 }
 
-fn main() {
-    let person_1 = User {
-        name: String::from("someone"),
-        age: 35,
-        salary: 40_000,
-    };
+// -------------------------------------------
+//           	- Simplifying structures
+// -------------------------------------------
 
-    let validate_user = |name: &str| name.len() != 0;
-    println!("User Validity {}", validate_user(&person_1.name));
-}
+// The problem
+// struct A {
+//     f1: u32,
+//     f2: u32,
+//     f3: u32,
+// }
+
+// fn fn1(a: &mut A) -> &u32 {
+//     &a.f2
+// }
+// fn fn2(a: &mut A) -> u32 {
+//     a.f1 + a.f3
+// }
+
+// fn fn3(a: &mut A) {
+//     let x = fn1(a);
+//     let y = fn2(a);
+//     println!("{}", x);
+// }
+// --------- Problem Ends ------
+
+
+// ---------- Solution --------
+// struct A {
+//     b: B,
+//     c: C,
+// }
+// struct B {
+//     f2: u32,
+// }
+// struct C {
+//     f1: u32,
+//     f3: u32,
+// }
+
+// fn fn1(b: &mut B) -> &u32 {
+//     &b.f2
+// }
+// fn fn2(c: &mut C) -> u32 {
+//     c.f1 + c.f3
+// }
+
+// fn fn3(a: &mut A) {
+//     let x = fn1(&mut a.b);
+//     let y = fn2(&mut a.c);
+//     println!("{}", x);
+// }
+
+// fn main() {}
+
+// fn main() {
+//     let mut stack_var = 4;
+//     let heap_var = Box::new(stack_var);
+ 
+//     stack_var = 5;
+//     println!(
+//         "The value of stack_var = {} and heap_var = {}",
+//         stack_var, heap_var
+//     );
+// }
+// fn main() {
+//     let mut name = String::from("Alice");
+//     let taken_name = std::mem::take(&mut name);
+//     println!("Taken name: {}", taken_name);
+//     println!("Remaining name: {}", name);
+// }
+
+// fn main() {
+//     let count = RefCell::new(0);
+//     let borrowed_count = count.borrow();
+//     *borrowed_count += 1;
+//     println!("Count: {}", borrowed_count);
+// }
+
+// use std::cell::RefCell;
+
+// fn main() {
+//     let count = RefCell::new(0); // Create a RefCell containing 0
+//     {
+//         let mut borrowed_count = count.borrow_mut(); // Mutable borrow
+//         *borrowed_count += 1; // Increment the value
+//     } // Mutable borrow ends here
+//     println!("Count: {}", count.borrow()); // Print the value
+// }
