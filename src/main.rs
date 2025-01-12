@@ -1217,7 +1217,6 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     value: u32,
 // }
 
-
 // trait DistanceThreeHours {
 //     type Distance;
 //     fn distance_in_three_hours(&self) -> Self::Distance;
@@ -1282,7 +1281,7 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     println!("User Validity {}", validate_user(&person_1.name));
 // }
 
-// //It must not contain any generics. 
+// //It must not contain any generics.
 
 // fn add(x: u32, y: u32) -> u32 {
 //     x + y
@@ -1292,7 +1291,7 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     x * x
 // }
 
-// fn sum_of_squares(num: u32, sq: fn(u32) -> u32, add: fn(u32, u32) -> u32) -> u32 { 
+// fn sum_of_squares(num: u32, sq: fn(u32) -> u32, add: fn(u32, u32) -> u32) -> u32 {
 //     let mut result = 0;
 //     for i in 1..=num {
 //         result = add(result, sq(i));
@@ -1307,10 +1306,10 @@ Finally, calculate the difference as 225 - 55 = 170.
 // }
 
 //ITERATOR
-    //trait Iterator {
-    //     type Item;
-    //     fn next(&mut self) -> Option<Self::Item>;
-    // }
+//trait Iterator {
+//     type Item;
+//     fn next(&mut self) -> Option<Self::Item>;
+// }
 
 // struct Employee {
 //     name: String,
@@ -1343,7 +1342,7 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     };
 //     let mut emp_db = Employee_records {
 //         employee_db: vec![emp_1, emp_2]
-//     }; 
+//     };
 //     // println!("{:?}", emp_db.next());
 //     // println!("{:?}", emp_db.next());
 //     // println!("{:?}", emp_db.next());
@@ -1538,7 +1537,6 @@ Finally, calculate the difference as 225 - 55 = 170.
 //     println!("s: {s}");
 // }
 
-
 //  fn main() {
 //     let int1 = 5;
 //     let int2 = 10;
@@ -1698,7 +1696,6 @@ enum Conveyance {
 //     //println!("{} {}", b, c); // later on delete this
 //     //println!("Value of a is : {:?}", a); // add later on
 
-
 //     // Example 2: Interior mutability
 //     // let x = 32;
 //     // let x1 = &mut x;
@@ -1711,7 +1708,7 @@ enum Conveyance {
 //     drop(b); // add later on
 //     println!("{:?}", a);
 
-//     // Example 3 
+//     // Example 3
 //     let a = Rc::new(RefCell::new(String::from("c++")));
 //     let b = Rc::clone(&a);
 
@@ -1806,52 +1803,52 @@ enum Conveyance {
 
 // type pointer = Option<Box<Node>>;
 // fn main() {
-    // let list = Node {
-    //     element: 1,
-    //     next: None,
-    // };
+// let list = Node {
+//     element: 1,
+//     next: None,
+// };
 
-    // let list = Node {
-    //     element: 1,
-    //     next: Some(Box::new(Node {
-    //         element: 2,
-    //         next: None,
-    //     })),
-    // };
+// let list = Node {
+//     element: 1,
+//     next: Some(Box::new(Node {
+//         element: 2,
+//         next: None,
+//     })),
+// };
 
-    // let list = Linklist {
-    //     head: Some(Node {
-    //         element: 1,
-    //         next: None,
-    //     }),
-    // };
+// let list = Linklist {
+//     head: Some(Node {
+//         element: 1,
+//         next: None,
+//     }),
+// };
 
-    // let list = Linklist {
-    //     head: Some(Node {
-    //         element: 1,
-    //         next: Some(Box::new(Node {
-    //             element: 2,
-    //             next: Some(Box::new(Node {
-    //                 element: 3,
-    //                 next: None,
-    //             })),
-    //         })),
-    //     }),
-    // };
+// let list = Linklist {
+//     head: Some(Node {
+//         element: 1,
+//         next: Some(Box::new(Node {
+//             element: 2,
+//             next: Some(Box::new(Node {
+//                 element: 3,
+//                 next: None,
+//             })),
+//         })),
+//     }),
+// };
 
-    // let list = Linklist { head: None };
+// let list = Linklist { head: None };
 
-    // let list = Linklist {
-    //     head: Some(Box::new(Node {
-    //         element: 100,
-    //         next: Some(Box::new(Node {
-    //             element: 200,
-    //             next: None,
-    //         })),
-    //     })),
-    // };
+// let list = Linklist {
+//     head: Some(Box::new(Node {
+//         element: 100,
+//         next: Some(Box::new(Node {
+//             element: 200,
+//             next: None,
+//         })),
+//     })),
+// };
 
-    // println!("{:?}", &list.head);
+// println!("{:?}", &list.head);
 // }
 
 // #[derive(Debug)]
@@ -2075,11 +2072,11 @@ enum Conveyance {
 // }
 
 // REFERENCE CYCLE
-// use std::cell::RefCell; 
-// use std::rc::{Rc, Weak}; 
-// #[derive(Debug)] 
+// use std::cell::RefCell;
+// use std::rc::{Rc, Weak};
+// #[derive(Debug)]
 // struct Node {
-//     next: Option<Weak<RefCell<Node>>>, 
+//     next: Option<Weak<RefCell<Node>>>,
 // }
 
 // impl Drop for Node {
@@ -2087,49 +2084,47 @@ enum Conveyance {
 //         println!("Dropping {:?}", self);
 //     }
 // }
-// fn main() {    
-//     let a = Rc::new(RefCell::new(Node {next: None} )); 
-//     println!("a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a)); 
+// fn main() {
+//     let a = Rc::new(RefCell::new(Node {next: None} ));
+//     println!("a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a));
 
-//     let b = Rc::new(RefCell::new(Node{next: Some(Rc::downgrade(&a))})); 
-//     println!("B is created: \n a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a));  
+//     let b = Rc::new(RefCell::new(Node{next: Some(Rc::downgrade(&a))}));
+//     println!("B is created: \n a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a));
 //     println!("b strong count: {:?}, b weak count: {:?}", Rc::strong_count(&b), Rc::weak_count(&b));
 
-//     let c = Rc::new(RefCell::new(Node {next: Some(Rc::downgrade(&b))})); 
+//     let c = Rc::new(RefCell::new(Node {next: Some(Rc::downgrade(&b))}));
 
-//     (*a).borrow_mut().next = Some(Rc::downgrade(&c)); 
+//     (*a).borrow_mut().next = Some(Rc::downgrade(&c));
 
-//     println!("After creating cycle: \n a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a)); 
-//     println!("b strong count: {:?}, b weak count: {:?}", Rc::strong_count(&b), Rc::weak_count(&b)); 
-//     println!("c strong count: {:?}, c weak count: {:?}", Rc::strong_count(&c), Rc::weak_count(&c)); 
+//     println!("After creating cycle: \n a strong count: {:?}, a weak count: {:?}", Rc::strong_count(&a), Rc::weak_count(&a));
+//     println!("b strong count: {:?}, b weak count: {:?}", Rc::strong_count(&b), Rc::weak_count(&b));
+//     println!("c strong count: {:?}, c weak count: {:?}", Rc::strong_count(&c), Rc::weak_count(&c));
 
 //     println!("a {:?}", a);
 
-
 // }
 
-
-// use std::borrow::Borrow; 
-// use std::rc::{Rc, Weak}; 
-// use std::cell::{RefCell, Ref}; 
+// use std::borrow::Borrow;
+// use std::rc::{Rc, Weak};
+// use std::cell::{RefCell, Ref};
 
 // #[derive(Debug)]
 // struct Node {
-//     value: i32, 
+//     value: i32,
 //     parent: RefCell<Weak<Node>>,
 //     children: RefCell<Vec<Rc<Node>>>,
 // }
-// fn main() { 
+// fn main() {
 //     let leaf  = Rc::new(Node {
-//         value: 3, 
-//         parent: RefCell::new(Weak::new()), 
+//         value: 3,
+//         parent: RefCell::new(Weak::new()),
 //         children: RefCell::new(vec![]),
-//     }); 
+//     });
 
 //     let branch = Rc::new(Node {
-//         value: 5, 
-//         parent: RefCell::new(Weak::new()), 
-//         children: RefCell::new(vec![Rc::clone(&leaf)]), 
+//         value: 5,
+//         parent: RefCell::new(Weak::new()),
+//         children: RefCell::new(vec![Rc::clone(&leaf)]),
 //     });
 //     *leaf.parent.borrow_mut() = Rc::downgrade(&branch);
 
@@ -2295,13 +2290,13 @@ struct A {
 }
 */
 
-struct A {
-    f1: u32,
-    f2: u32,
-    f3: u32,
-    // b: B,
-    // c: C,
-}
+// struct A {
+//     f1: u32,
+//     f2: u32,
+//     f3: u32,
+//     // b: B,
+//     // c: C,
+// }
 
 // -------------------------------------------
 //           	- Simplifying structures
@@ -2327,7 +2322,6 @@ struct A {
 //     println!("{}", x);
 // }
 // --------- Problem Ends ------
-
 
 // ---------- Solution --------
 // struct A {
@@ -2360,7 +2354,7 @@ struct A {
 // fn main() {
 //     let mut stack_var = 4;
 //     let heap_var = Box::new(stack_var);
- 
+
 //     stack_var = 5;
 //     println!(
 //         "The value of stack_var = {} and heap_var = {}",
@@ -2391,3 +2385,897 @@ struct A {
 //     } // Mutable borrow ends here
 //     println!("Count: {}", count.borrow()); // Print the value
 // }
+
+// SIZE IN RUST
+//-- sized types
+//-- unsized types
+
+// use std::mem::size_of;
+// fn main() {
+    //sized types
+    // println!("i32 size is: {}", size_of::<i32>());
+    // println!("(i32,i32) size is: {}", size_of::<(i32, i32)>());
+    // println!("[i32: 3] size is: {}", size_of::<[i32; 3]>());
+    //output
+    // i32 size is: 4
+    // (i32,i32) size is: 8
+    // [i32: 3] size is: 12
+    // struct Point {
+    //     x: bool,
+    //     y: i64,
+    // }
+    // println!("Struct size is: {}", size_of::<Point>());
+    // println!("i32 reference is: {}", size_of::<&i32>());
+    // println!("i32 mutable reference is: {}", size_of::<&mut i32>());
+    // /*
+    // Struct size is: 16
+    // i32 reference is: 8
+    // i32 mutable reference is: 8
+    //  */
+    // println!("Machine word size is: {}", size_of::<&()>());
+    // println!("Box<i32> is: {}", size_of::<Box<i32>>());
+    // println!("fn(i32) -> i32 is: {}", size_of::<fn(i32) -> i32>());
+    /*Machine word size is: 8
+    Box<i32> is: 8
+    fn(i32) -> i32 is: 8
+         */
+
+    // // Unsized Types
+    // println!("[i32] size is: {}", size_of::<&[i32]>());
+    // let a: [i32; 3];
+    // //println!("str size is: {}", size_of::<str>());
+    // println!(
+    //     "The size of the trait object is: {}",
+    //     size_of::<&dyn Some_trait>()
+    // );
+
+    // -------------------------------------------
+// 		- ?Sized and Generic Parameters
+// -------------------------------------------
+
+// use std::fmt::Debug;
+
+// 1. Must have a single unsized field.
+// 2. The unsized field must be the last field.
+// struct UnSizedStruct<T: ?Sized> {
+//     sized_field_1: i32,
+//     unsized_field: T,
+// }
+
+// // fn print_fn<T: Debug>(t: T)
+// fn print_fn<T: Debug + ?Sized>(t: &T) {
+//     println!("{:?}", t);
+// }
+
+// fn main() {
+//     let x = UnSizedStruct {
+//         sized_field_1: 3,
+//         unsized_field: [3],
+//     };
+
+//     let x = "my name";
+//     print_fn(&x);
+
+    //     /*
+    //     Parameter type          T	        &T          &T
+    //     Function call Input     &str	        &str        &&str
+    //     Resolves to             T = &str	    T = str     T = &str
+    //     */
+//}
+//}
+
+// -------------------------------------------
+// 			- Unsized Coercion
+// -------------------------------------------
+
+// fn str_slice_fn(s: &str) {}
+
+// fn array_slice_fn<T>(s: &[T]) {}
+
+// trait Some_Trait {
+//     fn method(&self);
+// }
+
+// impl<T> Some_Trait for [T] {
+//     fn method(&self) {}
+    // can now call "method" on
+    // 1) any &[T]
+    // 2) Vec<T>
+    // 3) [T; N]
+// }
+// fn main() {
+//     let some_string = String::from("String");
+//     str_slice_fn(&some_string);
+
+//     let slice: &[i32] = &[1];
+//     let vec = vec![1];
+//     let array = [1, 2, 3];
+
+//     array_slice_fn(slice);
+//     array_slice_fn(&vec); // deref coercion
+//     array_slice_fn(&array); // Unsized coercion
+
+//     slice.method();
+//     vec.method();  // deref coercion
+//     array.method(); // Unsized coercion
+// }
+
+// -------------------------------------------
+// 			- Zero Sized Types
+// 		        - Never Type
+// -------------------------------------------
+// to change to nightly use the command of rustup override set nightly
+// #![feature(never_type)]
+
+// fn unrecoverable_state() -> ! {
+//     panic!("This function will never return normally with something valid");
+// }
+
+// // fn function() -> Result<i32, String> {}
+// // fn function_1() -> Result<i32, !> {}
+// // fn function_2() -> Result<!, String> {}
+
+
+// // fn function() -> Result<NeverType, String> {}
+// // fn function_1() -> Result<i32, NeverType> {}
+// enum NeverType {}
+
+// fn main() {
+//     // unrecoverable_state();
+//     //let x = !;
+//     //let x = unrecoverable_state();
+//     let x: !;
+
+//     let x = match "123".parse::<i32>() {
+//         Ok(num) => num,
+//         Err(_) => panic!(),
+//     };
+
+//     let x: String = return;
+//     let counter = 0;
+//     let result = loop {
+//         counter += 1;
+//         if counter == 10 {
+//             break;
+//         }
+//     };
+
+//     //let x = NeverType;
+// }
+
+// -------------------------------------------
+// 			- Zero Sized Types
+// 			    - Unit Type
+// -------------------------------------------
+// fn f1() {}
+// fn f1() -> () {}
+// fn division_status(divident: f64, divisor: f64) -> Result<(), String> {
+//     let answer = match divisor {
+//         0.0 => Err(String::from("Error: Division by zero")),
+//         _ => {
+//             println!("The division is invalid");
+//             Ok(())
+//         }
+//     };
+//     answer
+// }
+// fn main() {
+//     let x = ();
+//     let y = f1();
+
+//     let z = println!("Hello, world!");
+
+//     let mut vec: Vec<()> = Vec::with_capacity(0);
+//     vec.push(());
+//     vec.push(());
+//     vec.push(());
+//     assert_eq!(3, vec.len());
+//     println!("{}", vec.capacity());
+
+//     /*
+//     Unit Type                          || Never Types
+//     1. No meaningful value             || 1. Never produces a value
+//     2. Function returning unit         || 2. Function returning never, will never
+//     always returns normally            || returns normally
+//     3. single value, which can not be  || 3. No associated value, and can be coerced
+//     coerced                            || to all types.
+//     */
+// }
+
+// -------------------------------------------
+// 		- Zero Sized Types
+// 		- Unit Struct
+// -------------------------------------------
+
+// struct Admin;
+// struct User;
+
+// trait Authenticate {
+//     fn authenticate(&self, username: &str, password: &str) -> bool;
+// }
+
+// impl Authenticate for Admin {
+//     fn authenticate(&self, username: &str, password: &str) -> bool {
+//         username == "admin" && password == "adminpass"
+//     }
+// }
+
+// impl Authenticate for User {
+//     fn authenticate(&self, username: &str, password: &str) -> bool {
+//         username == "user" && password == "userpass"
+//     }
+// }
+
+// fn login<T: Authenticate>(role: T, username: &str, password: &str) -> bool {
+//     role.authenticate(username, password)
+// }
+
+// fn main() {
+//     let admin = Admin;
+//     let user = User;
+
+//     let admin_login = login(admin, "admin", "adminpass");
+//     let user_login = login(user, "user", "userpass");
+
+//     if admin_login {
+//         println!("Admin login successful!");
+//     } else {
+//         println!("Admin login failed!");
+//     }
+
+//     if user_login {
+//         println!("User login successful!");
+//     } else {
+//         println!("User login failed!");
+//     }
+//     struct ABC;
+//     let x = ();
+//     let y = x;
+//     let z = x;
+
+//     let x = ABC;
+//     let y = x;
+//     //let z = x;
+// }
+
+// Extra examples:
+/*
+// Type-Level Constraints: Unit structs can be used as type-level constraints to enforce certain conditions or behaviors at the type level. For example, you can define a unit struct called NonEmpty to enforce that a collection or container type must always have at least one element.
+#[derive(Debug)]
+struct NonEmpty<T>(T);
+
+impl<T> NonEmpty<Vec<T>> {
+    fn new(data: T) -> Self {
+        NonEmpty(vec![data])
+    }
+}
+
+fn main() {
+    let non_empty_vec = NonEmpty::new(10);
+    println!("{:?}", non_empty_vec);
+}
+*/
+
+/*
+//Namespace Organization: Unit structs can be used to organize related functions or methods into a single namespace. By defining them within a unit struct, you can group related functionality together and access them using the :: syntax.
+mod math {
+    pub struct Operations;
+
+    impl Operations {
+        pub fn add(a: i32, b: i32) -> i32 {
+            a + b
+        }
+
+        pub fn multiply(a: i32, b: i32) -> i32 {
+            a * b
+        }
+    }
+}
+
+fn main() {
+    let result = math::Operations::add(2, 3);
+    println!("Addition: {}", result);
+}
+*/
+
+/*
+// Code Documentation: Unit structs can be used to document certain concepts or intentions in your code. By giving a meaningful name to a unit struct, you can convey the purpose or intention of a particular code block or construct.
+mod logging {
+    pub struct Log;
+
+    impl Log {
+        pub fn info(message: &str) {
+            println!("INFO: {}", message);
+        }
+
+        pub fn error(message: &str) {
+            println!("ERROR: {}", message);
+        }
+    }
+}
+
+fn main() {
+    logging::Log::info("This is an informational message");
+    logging::Log::error("An error occurred!");
+}
+*/
+
+/*
+// Future Extensibility: Unit structs can be used as placeholders for potential future enhancements or extensions. You can define a unit struct with the intention of adding more fields or functionality to it in future versions of your code.
+struct FutureExtension;
+
+impl FutureExtension {
+    fn new() -> Self {
+        FutureExtension
+    }
+
+    // Additional methods or fields can be added in the future
+    fn additional_feature(&self) {
+        println!("Performing additional feature...");
+    }
+}
+
+fn main() {
+    let future = FutureExtension::new();
+    future.additional_feature();
+}
+*/
+
+//THREAD BASICS
+// use::std::thread;
+// use::std::time::Duration;
+
+// fn main() {
+//     println!("This will be printed");
+//     println!("This will also be printed");
+//     println!("The concurrenct will start after this line");
+
+//     let t = thread::spawn(|| {
+//         println!("Hello 1 from the thread");
+//         println!("Hello 2 from the thread");
+//         println!("Hello 3 from the thread");
+//         println!("Hello 4 from the thread");
+//         println!("Hello 5 from the thread");
+//         println!("Hello 6 from the thread");
+//         println!("Hello 7 from the thread");
+//         println!("Hello 8 from the thread");
+//     });
+//     // thread::sleep(Duration::from_millis(1));
+//     t.join();
+//     println!("Hello 9 from the main");
+//     println!("Hello 10 from the main");
+
+// }
+
+//OWNERSHIP IN THREADS
+// -------------------------------------------
+// 	Ownership and Threads
+//              - Prerequiste: Closures
+// -------------------------------------------
+
+// use std::thread;
+// fn main() {
+//     let x = "some string".to_string();
+
+//     thread::spawn(move || {
+//         // let y = x;
+//         println!("{x}");
+//     });
+//     //println!("{x}");
+// }
+
+// use std::thread;
+
+// fn main() {
+    
+//     let handle_1 = thread::spawn(|| {
+//         let mut sum = 0;
+//         let range = 0..=1_000;
+//         for num in range {
+//             sum += num;
+//         }
+//         sum
+//     });   
+//     let handle_2 = thread::spawn(|| {
+//         let mut sum = handle_1.join().unwrap();
+//         let range = 1001..=2000;
+//         for num in range {
+//             sum += num;
+//         }
+//         sum
+//     });
+//     let handle_3 = thread::spawn(|| {
+//         let mut sum = handle_2.join().unwrap();
+//         let range = 2001..=3000;
+//         for num in range {
+//             sum += num;
+//         }
+//         sum
+//     });
+
+//     let mut sum = 0;
+    
+//     sum = handle_3.join().unwrap();
+    
+//     println!("Final Summation Result {sum}");
+// }
+
+// use std::thread;
+
+// fn main() {
+//     let v = vec![1, 2, 3];
+//     let x = 5;
+//     let handle = thread::spawn(move || {
+//         println!("Here's a vector: {:?}", v);
+//         println!("Here's a variable : {:?}", x);
+//     });
+
+//     println!("The variable x is still alive {}", x);    // Note: premitives are not moved but copied 
+//                                                         // so no issues here    
+//     // println!("The variable v is not alive {}", v);   // Note: Heap allocated data are moved so no more usable
+//     handle.join();
+// }
+
+//MESSAGE PASSING THROUGH CHANNELS
+
+// use std::thread;
+// use std::sync::mpsc;
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+//     //  let rx_clone = rx.clone();
+//      for i in 0..10 {
+//         let tx_clone = tx.clone();
+//         thread::spawn(move || {
+//             println!("Sending value {i}");
+//             tx_clone.send(i).unwrap();
+//         });
+//     }
+// }
+// // Example 1
+// /* 
+// use std::sync::mpsc;
+// use std::thread;
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+//     // let rx_clone = rx.clone();
+//     for i in 0..10 {
+//         let tx_clone = tx.clone();
+//         thread::spawn(move || {
+//             println!("Sending value {i}");
+//             tx_clone.send(i).unwrap();
+//         });
+//     }
+
+//     drop(tx);
+//     let recv_val = rx.recv().unwrap();
+//     println!("Recieved {recv_val}");
+//     let recv_val = rx.recv().unwrap();
+//     println!("Received {recv_val}");
+
+//     // for message in rx {
+//     //     println!("Received {message}");
+//     // }
+// } 
+// */
+
+// // Example 2 
+// use std::{sync::mpsc, thread};
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+
+//     let t = thread::spawn(move || {
+//         let mut i = "5".to_string();
+//         println!("Sending value {i}");
+//         tx.send(i).unwrap();
+//     });
+
+//     // let received_val = rx.recv().unwrap();
+//     // println!("Received {received_val}");
+
+//     // t.join();
+//     let mut received_status = false;
+//     while received_status != true {
+//         match rx.try_recv() {
+//             Ok(received_value) => {
+//                 println!("Received value is: {received_value}");
+//                 received_status = true;
+//             }
+//             Err(_) => println!("I am doing some other stuff"),
+//         }
+//     }
+// }
+
+// use std::sync::mpsc;
+// use std::thread;
+// use std::time::Duration;
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+
+//     let handle = thread::spawn(move || {
+//         let x = "some_value".to_string();
+//         println!("Sending value {x}");
+//         // thread::sleep(Duration::from_secs(3));
+//         tx.send(x).unwrap();
+//     });
+
+//     // rx.recv().unwrap();
+//     // println!("I am blocked");
+
+//     let mut received_status = false;
+//     while received_status != true {
+//         match rx.try_recv() {
+//             Ok(received_value) => {
+//                 println!("Received value is {:?}", received_value);
+//                 received_status = true;
+//             }
+//             Err(_) => println!("I am doing some other stuff"),
+//         }
+//     }
+// }
+
+// use std::sync::mpsc;
+// use std::thread;
+
+// fn thread_fn(d: i32, tx: mpsc::Sender<i32>) {
+//     thread::spawn(move || {
+//         println!("{} send!", d);
+//         // Add code for sending d 
+//         tx.send(d).unwrap();
+//     });
+// }
+
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+//     for i in 0..5 {
+//         // Add code for calling the function with value i and a clone of tx
+//         thread_fn(i, tx.clone());
+//     }
+
+//     drop(tx);
+
+//     for recieving_val in rx {
+//         println!("{} received!", recieving_val);
+//     }
+// }
+
+// use std::sync::mpsc;
+// use std::thread;
+// use std::time::Duration;
+
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+
+//     let t = thread::spawn(move || {
+//         let x = "some_value".to_string();
+//         println!("Sending value {x}");
+//         tx.send(x).unwrap();
+//     });
+
+//     let mut received_status = false;
+//     while !received_status {
+//         match rx.try_recv() {
+//             Ok(received_value) => {
+//                 println!("Received value is: {received_value}");
+//                 received_status = true;
+//             }
+//             Err(_) => {
+//                 println!("I am doing some other stuff"); // This will now execute
+//                 thread::sleep(Duration::from_millis(50)); // Add a small delay
+//             }
+//         }
+//     }
+
+//     t.join().unwrap(); // Properly handle the thread join
+// }
+
+//SHARING STATES
+
+// use std::sync::Mutex;
+// use::std::thread;
+
+// fn main() {
+//     let m = Mutex::new(5);
+//     {
+//         let mut num = m.lock().unwrap();
+//         *num = 10;
+//     }
+
+//     let lock_m = m.lock().unwrap();
+//     println!("m is: {:?}", *lock_m);
+//     drop(lock_m);   // add later on
+
+//     let lock_m1 = m.lock().unwrap();
+//     println!("This code is blocked");
+// }
+
+// use std::rc::Rc;
+// use std::sync::Mutex;
+// use std::thread;
+
+// struct File {
+//     text: Vec<String>,
+// }
+// fn main() {
+
+// }
+
+// use std::rc::Rc;
+// use std::sync::Arc;
+// use std::sync::Mutex;
+// use std::thread;
+
+// struct File {
+//     text: Vec<String>,
+// }
+// fn main() {
+//     let file = Arc::new(Mutex::new(File { text: vec![] }));
+//     let mut thread_vec = vec![];
+
+//     for i in 0..10 {
+//         let file = Arc::clone(&file);
+//         let handle = thread::spawn(move || {
+//             let mut file_lock = file.lock().unwrap();
+//             file_lock.text.push(format!("Hello from Thread {i}"));
+//         });
+//         thread_vec.push(handle);
+//     }
+//     for handle in thread_vec {
+//         handle.join().unwrap();
+//     }
+
+//     let file_lock = file.lock().unwrap();
+//     for t in &file_lock.text {
+//         println!("{t}");
+//     }
+// }
+
+//BARRIERS
+// use std::sync::{Arc, Barrier, Mutex};
+// use std::thread;
+
+// fn main() {
+//     let mut threads_vec = Vec::new();
+//     let tasks = Arc::new(Mutex::new(vec![]));
+//     let barrier = Arc::new(Barrier::new(5));
+
+//     for i in 0..5 {
+//         let tasks = tasks.clone();
+//         let barrier = barrier.clone();
+//         let handle = thread::spawn(move || {
+//             // Tasks 1
+//             tasks
+//                 .lock()
+//                 .unwrap()
+//                 .push(format!("Thread {i}, Completed its part on Task 1"));
+
+//             barrier.wait();
+//             // Task 2
+//             tasks
+//                 .lock()
+//                 .unwrap()
+//                 .push(format!("Thread {i}, Completed its part on Task 2"));
+
+//             barrier.wait();
+//             // Task 3
+//             tasks
+//                 .lock()
+//                 .unwrap()
+//                 .push(format!("Thread {i}, Completed its part on Task 3"));
+//         });
+//         threads_vec.push(handle);
+//     }
+
+//     for handle in threads_vec {
+//         handle.join().unwrap();
+//     }
+
+//     let task_lock = &*tasks.lock().unwrap();
+//     for contents in task_lock {
+//         println!("{contents}");
+//     }
+// }
+
+// -------------------------------------------
+// 	 Scoped Threads
+// -------------------------------------------
+
+// use std::thread;
+
+// fn main() {
+//     let mut vec = vec![1, 2, 3];
+
+//     thread::scope(|some_scope| {
+//         some_scope.spawn(|| {
+//             println!("Thread inside scope");
+//             println!("vec: {:?}", vec);
+//         });
+
+//         some_scope.spawn(|| {
+//             println!("Another Thread inside scope");
+//             //vec.push(4);
+//             println!("vec: {:?}", vec);
+//         });
+//     });
+
+//     println!("The scope finished");
+//     vec.push(5);
+//     println!("vec: {:?}", vec);
+// }
+
+//THREAD PARKING
+// use std::sync::{Arc, Mutex};
+// use std::thread;
+// use std::time::Duration;
+// fn main() {
+//     let data = Arc::new(Mutex::new(5));
+//     let data_clone = data.clone();
+//     let thread_1 = thread::spawn(move || {
+//         println!("Thread 1: I am doing some work");
+//         println!("Thread 1: I am doing some more work");
+//         // thread::sleep(Duration::from_secs(2));
+
+//         println!("Thread 1: Parked");
+//         thread::park();
+//         //thread::park_timeout(Duration::from_secs(4));
+
+//         println!("Thread 1: Printing the updated data");
+//         println!("Thread 1: Data: {:?}", *data.lock().unwrap());
+//     });
+
+//     let thread_2 = thread::spawn(move || {
+//         println!("Thread 2: I am working on updating the data");
+//         thread::sleep(Duration::from_secs(1));
+//         *data_clone.lock().unwrap() = 10;
+//         println!("Thread 2: Data updated completed");
+//     });
+//     thread_2.join();
+//     thread_1.thread().unpark();
+//     thread_1.join();
+// }
+
+// ASYNC AWAIT 
+// async fn printing() {
+//     println!("I am async function")
+// }
+// #[tokio::main]
+// async fn main() {
+//     let x = printing().await;
+// }
+
+//TOKIO
+// async fn printing(i: i32) {
+//     sleep(Duration::from_secs(1)).await;
+//     println!("Task {i}");
+// }
+// use std::time::Duration;
+// use tokio::time::sleep;
+// #[tokio::main]
+// //#[tokio::main(flavor = "current_thread")]
+// async fn main() {
+//     let mut handles = vec![];
+//     for i in 0..3 {
+//         let handle = tokio::spawn(async move {
+//             println!("Task {i}, printing, first time");
+//             printing(i).await;
+//             println!("Task {i}, printing, second time");
+//             printing(i).await;
+//             println!("Task {i}, completed");
+//         });
+//         handles.push(handle);
+//     }
+//     for handle in handles {
+//         handle.await.unwrap();
+//     }
+//     println!("All Tasks are now completed");
+// }
+
+// //      Computationally Intensive Functions
+// // -------------------------------------------
+
+// /*
+// #[tokio::main(flavor = "current_thread")]
+// async fn main() {
+//     let mut handles = vec![];
+
+//     for handle in handles {
+//         handle.await.unwrap();
+//     }
+//     println!("All tasks are now completed");
+// }
+// */
+// #[tokio::main(flavor = "current_thread")]
+// async fn main() {
+//     let mut handles = vec![];
+
+//     handles.push(tokio::spawn(async {
+//         // heavy_computations();
+//         let _result = tokio::task::spawn_blocking(|| {
+//             heavy_computations();
+//         })
+//         .await;
+//     }));
+
+//     handles.push(tokio::spawn(async move {
+//         simpler_computations().await;
+//     }));
+
+//     for handle in handles {
+//         handle.await.unwrap();
+//     }
+//     println!("All tasks are now completed");
+// }
+
+// fn heavy_computations() {
+//     println!("fn heavy_computations started");
+//     let mut d = 0;
+//     for i in 0..300_000_000 {
+//         d = d + 1;
+//     }
+//     println!("fn heavy_computations completed");
+// }
+
+// async fn simpler_computations() {
+//     println!("fn simpler_computations started");
+//     println!("fn simpler_computations completed");
+// }
+
+//WEB SCRAPPING
+// use std::sync::{mpsc,Arc,Mutex}; 
+// use std::time::{Duration, Instant}; 
+// use std::thread; 
+// use ureq::{Agent, AgentBuilder}; 
+// fn main() -> Result<(), ureq::Error>{  
+//  let webpages = vec![
+//      "https://gist.github.com/recluze/1d2989c7e345c8c3c542", 
+//      "https://gist.github.com/recluze/a98aa1804884ca3b3ad3",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/460157afc6a7492555bb",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/c9bc4130af995c36176d",
+//      "https://gist.github.com/recluze/1d2989c7e345c8c3c542",
+//      "https://gist.github.com/recluze/a98aa1804884ca3b3ad3",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/460157afc6a7492555bb",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/c9bc4130af995c36176d",
+//      "https://gist.github.com/recluze/1d2989c7e345c8c3c542",
+//      "https://gist.github.com/recluze/a98aa1804884ca3b3ad3",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/460157afc6a7492555bb",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/c9bc4130af995c36176d",
+//  ];  
+
+//  let agent = ureq::AgentBuilder::new().build();
+//  let now = Instant::now(); 
+ 
+//  for web_page in &webpages {
+//      let web_body = agent.get(web_page).call()?.into_string()?;
+//  }
+//  println!("Time taken wihtout Threads: {:.2?}", now.elapsed());
+
+//  let now = Instant::now(); 
+//  let agent = Arc::new(agent);
+//  let mut handles: Vec<thread::JoinHandle<Result<(), ureq::Error>>> = Vec::new(); 
+
+//  for web_page in webpages {
+//      let agent_thread = agent.clone(); 
+//      let t = thread::spawn(move || {
+//          let web_body = agent_thread
+//          .get(web_page)
+//          .call()?
+//          .into_string()?; 
+
+//          Ok(())
+//      });
+//      handles.push(t);
+//  } 
+
+//  for handle in handles {
+//      handle.join().unwrap();
+//  }
+
+//  println!("Time taken using Threads: {:.2?}", now.elapsed());
+//  Ok(())
+
+// }''
