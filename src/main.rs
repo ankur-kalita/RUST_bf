@@ -2392,44 +2392,44 @@ struct A {
 
 // use std::mem::size_of;
 // fn main() {
-    //sized types
-    // println!("i32 size is: {}", size_of::<i32>());
-    // println!("(i32,i32) size is: {}", size_of::<(i32, i32)>());
-    // println!("[i32: 3] size is: {}", size_of::<[i32; 3]>());
-    //output
-    // i32 size is: 4
-    // (i32,i32) size is: 8
-    // [i32: 3] size is: 12
-    // struct Point {
-    //     x: bool,
-    //     y: i64,
-    // }
-    // println!("Struct size is: {}", size_of::<Point>());
-    // println!("i32 reference is: {}", size_of::<&i32>());
-    // println!("i32 mutable reference is: {}", size_of::<&mut i32>());
-    // /*
-    // Struct size is: 16
-    // i32 reference is: 8
-    // i32 mutable reference is: 8
-    //  */
-    // println!("Machine word size is: {}", size_of::<&()>());
-    // println!("Box<i32> is: {}", size_of::<Box<i32>>());
-    // println!("fn(i32) -> i32 is: {}", size_of::<fn(i32) -> i32>());
-    /*Machine word size is: 8
-    Box<i32> is: 8
-    fn(i32) -> i32 is: 8
-         */
+//sized types
+// println!("i32 size is: {}", size_of::<i32>());
+// println!("(i32,i32) size is: {}", size_of::<(i32, i32)>());
+// println!("[i32: 3] size is: {}", size_of::<[i32; 3]>());
+//output
+// i32 size is: 4
+// (i32,i32) size is: 8
+// [i32: 3] size is: 12
+// struct Point {
+//     x: bool,
+//     y: i64,
+// }
+// println!("Struct size is: {}", size_of::<Point>());
+// println!("i32 reference is: {}", size_of::<&i32>());
+// println!("i32 mutable reference is: {}", size_of::<&mut i32>());
+// /*
+// Struct size is: 16
+// i32 reference is: 8
+// i32 mutable reference is: 8
+//  */
+// println!("Machine word size is: {}", size_of::<&()>());
+// println!("Box<i32> is: {}", size_of::<Box<i32>>());
+// println!("fn(i32) -> i32 is: {}", size_of::<fn(i32) -> i32>());
+/*Machine word size is: 8
+Box<i32> is: 8
+fn(i32) -> i32 is: 8
+     */
 
-    // // Unsized Types
-    // println!("[i32] size is: {}", size_of::<&[i32]>());
-    // let a: [i32; 3];
-    // //println!("str size is: {}", size_of::<str>());
-    // println!(
-    //     "The size of the trait object is: {}",
-    //     size_of::<&dyn Some_trait>()
-    // );
+// // Unsized Types
+// println!("[i32] size is: {}", size_of::<&[i32]>());
+// let a: [i32; 3];
+// //println!("str size is: {}", size_of::<str>());
+// println!(
+//     "The size of the trait object is: {}",
+//     size_of::<&dyn Some_trait>()
+// );
 
-    // -------------------------------------------
+// -------------------------------------------
 // 		- ?Sized and Generic Parameters
 // -------------------------------------------
 
@@ -2456,11 +2456,11 @@ struct A {
 //     let x = "my name";
 //     print_fn(&x);
 
-    //     /*
-    //     Parameter type          T	        &T          &T
-    //     Function call Input     &str	        &str        &&str
-    //     Resolves to             T = &str	    T = str     T = &str
-    //     */
+//     /*
+//     Parameter type          T	        &T          &T
+//     Function call Input     &str	        &str        &&str
+//     Resolves to             T = &str	    T = str     T = &str
+//     */
 //}
 //}
 
@@ -2478,10 +2478,10 @@ struct A {
 
 // impl<T> Some_Trait for [T] {
 //     fn method(&self) {}
-    // can now call "method" on
-    // 1) any &[T]
-    // 2) Vec<T>
-    // 3) [T; N]
+// can now call "method" on
+// 1) any &[T]
+// 2) Vec<T>
+// 3) [T; N]
 // }
 // fn main() {
 //     let some_string = String::from("String");
@@ -2514,7 +2514,6 @@ struct A {
 // // fn function() -> Result<i32, String> {}
 // // fn function_1() -> Result<i32, !> {}
 // // fn function_2() -> Result<!, String> {}
-
 
 // // fn function() -> Result<NeverType, String> {}
 // // fn function_1() -> Result<i32, NeverType> {}
@@ -2767,7 +2766,7 @@ fn main() {
 // use std::thread;
 
 // fn main() {
-    
+
 //     let handle_1 = thread::spawn(|| {
 //         let mut sum = 0;
 //         let range = 0..=1_000;
@@ -2775,7 +2774,7 @@ fn main() {
 //             sum += num;
 //         }
 //         sum
-//     });   
+//     });
 //     let handle_2 = thread::spawn(|| {
 //         let mut sum = handle_1.join().unwrap();
 //         let range = 1001..=2000;
@@ -2794,9 +2793,9 @@ fn main() {
 //     });
 
 //     let mut sum = 0;
-    
+
 //     sum = handle_3.join().unwrap();
-    
+
 //     println!("Final Summation Result {sum}");
 // }
 
@@ -2810,8 +2809,8 @@ fn main() {
 //         println!("Here's a variable : {:?}", x);
 //     });
 
-//     println!("The variable x is still alive {}", x);    // Note: premitives are not moved but copied 
-//                                                         // so no issues here    
+//     println!("The variable x is still alive {}", x);    // Note: premitives are not moved but copied
+//                                                         // so no issues here
 //     // println!("The variable v is not alive {}", v);   // Note: Heap allocated data are moved so no more usable
 //     handle.join();
 // }
@@ -2832,7 +2831,7 @@ fn main() {
 //     }
 // }
 // // Example 1
-// /* 
+// /*
 // use std::sync::mpsc;
 // use std::thread;
 // fn main() {
@@ -2855,10 +2854,9 @@ fn main() {
 //     // for message in rx {
 //     //     println!("Received {message}");
 //     // }
-// } 
+// }
 // */
-
-// // Example 2 
+// // Example 2
 // use std::{sync::mpsc, thread};
 // fn main() {
 //     let (tx, rx) = mpsc::channel();
@@ -2919,7 +2917,7 @@ fn main() {
 // fn thread_fn(d: i32, tx: mpsc::Sender<i32>) {
 //     thread::spawn(move || {
 //         println!("{} send!", d);
-//         // Add code for sending d 
+//         // Add code for sending d
 //         tx.send(d).unwrap();
 //     });
 // }
@@ -3133,7 +3131,7 @@ fn main() {
 //     thread_1.join();
 // }
 
-// ASYNC AWAIT 
+// ASYNC AWAIT
 // async fn printing() {
 //     println!("I am async function")
 // }
@@ -3220,18 +3218,12 @@ fn main() {
 // }
 
 //WEB SCRAPPING
-// use std::sync::{mpsc,Arc,Mutex}; 
-// use std::time::{Duration, Instant}; 
-// use std::thread; 
-// use ureq::{Agent, AgentBuilder}; 
-// fn main() -> Result<(), ureq::Error>{  
+// use std::sync::{mpsc,Arc,Mutex};
+// use std::time::{Duration, Instant};
+// use std::thread;
+// use ureq::{Agent, AgentBuilder};
+// fn main() -> Result<(), ureq::Error>{
 //  let webpages = vec![
-//      "https://gist.github.com/recluze/1d2989c7e345c8c3c542", 
-//      "https://gist.github.com/recluze/a98aa1804884ca3b3ad3",
-//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
-//      "https://gist.github.com/recluze/460157afc6a7492555bb",
-//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
-//      "https://gist.github.com/recluze/c9bc4130af995c36176d",
 //      "https://gist.github.com/recluze/1d2989c7e345c8c3c542",
 //      "https://gist.github.com/recluze/a98aa1804884ca3b3ad3",
 //      "https://gist.github.com/recluze/5051735efe3fc189b90d",
@@ -3244,32 +3236,38 @@ fn main() {
 //      "https://gist.github.com/recluze/460157afc6a7492555bb",
 //      "https://gist.github.com/recluze/5051735efe3fc189b90d",
 //      "https://gist.github.com/recluze/c9bc4130af995c36176d",
-//  ];  
+//      "https://gist.github.com/recluze/1d2989c7e345c8c3c542",
+//      "https://gist.github.com/recluze/a98aa1804884ca3b3ad3",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/460157afc6a7492555bb",
+//      "https://gist.github.com/recluze/5051735efe3fc189b90d",
+//      "https://gist.github.com/recluze/c9bc4130af995c36176d",
+//  ];
 
 //  let agent = ureq::AgentBuilder::new().build();
-//  let now = Instant::now(); 
- 
+//  let now = Instant::now();
+
 //  for web_page in &webpages {
 //      let web_body = agent.get(web_page).call()?.into_string()?;
 //  }
 //  println!("Time taken wihtout Threads: {:.2?}", now.elapsed());
 
-//  let now = Instant::now(); 
+//  let now = Instant::now();
 //  let agent = Arc::new(agent);
-//  let mut handles: Vec<thread::JoinHandle<Result<(), ureq::Error>>> = Vec::new(); 
+//  let mut handles: Vec<thread::JoinHandle<Result<(), ureq::Error>>> = Vec::new();
 
 //  for web_page in webpages {
-//      let agent_thread = agent.clone(); 
+//      let agent_thread = agent.clone();
 //      let t = thread::spawn(move || {
 //          let web_body = agent_thread
 //          .get(web_page)
 //          .call()?
-//          .into_string()?; 
+//          .into_string()?;
 
 //          Ok(())
 //      });
 //      handles.push(t);
-//  } 
+//  }
 
 //  for handle in handles {
 //      handle.join().unwrap();
@@ -3278,4 +3276,1400 @@ fn main() {
 //  println!("Time taken using Threads: {:.2?}", now.elapsed());
 //  Ok(())
 
-// }''
+// }
+
+// let mut vec_1 = vec![1, 2, 3];
+// let mut vec_2 = vec![4, 5, 6];
+// let mut reference = &vec_1;
+// reference = &vec_2;
+
+// let mut reference = &mut vec_1;
+// reference.push(10);
+// reference = &mut vec_2;
+
+// let mut reference = &mut &vec_1;
+// reference = &mut &vec_2;
+
+// // Summary
+// //     ref: &T;       // immutable binding of an immutable reference
+// // mut ref: &T;       // mutable binding of an immutable reference
+// //     ref: &mut T;   // immutable binding of a mutable reference
+// // mut ref: &mut T;   // mutable binding of a mutable reference
+// //     ref: &mut &T;  // immutable binding of a mutable reference to an immutable reference.
+// // mut ref: &mut &T;  // mutable binding of a mutable reference to an immutable reference.
+
+// fn main() {
+//     let str = String::from("");
+//     let ref_str_1 = &str;
+//     let ref_str_2 = ref_str_1;
+//     println!("{ref_str_1}");
+
+//     let mut str_slice_1: &str;
+//     {
+//         let str_slice_2 = "";
+//         str_slice_1 = "";
+//     }
+//     println!("{str_slice_1}");
+
+//     let str_slice_from_string: &str;
+//     {
+//         let string = String::from("");
+//         //str_slice_from_string = &*string;
+//     }
+
+//     //println!("{str_slice_from_string}");
+
+//     let mut x = 45;
+//     let z = &mut x;
+//     let y = &*z;
+// }
+
+// fn largest<'a, 'b>(x: &'a u8, y: &'b u8) -> &'a u8
+// where
+//     'b: 'a,
+// {
+//     if x > y {
+//         x
+//     } else {
+//         y
+//     }
+// }
+
+// fn main() {}
+
+// -------------------------------------------
+// 	        Implied Bounds
+// -------------------------------------------
+
+// struct GenericWithLifetime<'a, T> {
+//     b: &'a T, // implied T: 'a   // 'a: 'b => 'a outlives 'b and now T: 'a => T outlives 'a
+// }
+
+// fn lifetime_bound_implied_fn<'a, T>(x: GenericWithLifetime<T>) {} // implied T: 'a
+
+// fn lifetime_bound_implied_fn_1<'b, U>(x: &'b U) {} // implied U: 'b
+
+// fn requires_lifetime_bound<'a, T>() {} // bound not not implied
+
+// trait Trait<'a, T: 'a> {}
+// //impl<'a, T> Trait<'a, T> for () {} // not implied T: 'a
+
+// // This compiles as `T: 'a` is implied by the self type `&'a T`.
+// impl<'a, T> Trait<'a, T> for &'a T {} // implied T: 'a
+
+// struct A<T: Clone>(T);
+// fn doesnt_specify_T_Clone<T>(x: A<T>) {} // add the lifetime bound of T: Clone
+// fn main() {}
+
+// // -------------------------------------------
+// // 	        Subtyping and Variance (Covariance)
+// //
+// //          Prereqs: Subtyping, Lifetime Elision
+// // -------------------------------------------
+
+// // Subtype
+// // X: Y
+// // 'x: 'y => 'x outlives 'y
+
+// // Variance
+// // 'x: 'y = > T<'x> relationship with T<'y> ?
+
+// // Types of variance
+// //          1. Covariance:  if 'x: 'y then T<'x>: T<'y>
+// //                          if 'static: 'a then 'static T: 'a T, assume T = &str
+// //                          &'static str: &'a str
+
+// //          2. Contravariance
+// //          3. Invariance
+
+// fn accepts_str(s: &str) {}
+// // fn accepts_str(s: &'a str)
+
+// // We can provide
+// // fn(&'a str) but also fn(&'static str)
+
+// fn main() {
+//     let s_1 = String::from("");
+//     let s_2 = ""; // 'static
+
+//     // let s_4: &str;
+//     // {
+//     //     let s_2 = "";
+//     //     s_4 = s_2;
+//     // }
+//     // println!("{s_4}");
+//     let s_3 = &*s_1; // 'a
+
+//     accepts_str(s_2); // 'static
+//     accepts_str(s_3); // 'a
+
+//     let mut x = &*s_1; // 'a
+//     let mut y: &'static str = ""; // 'static
+
+//     x = y; // y: &'a str however 'static: 'a => &'static: &'a str
+//     //y = x; // not valid
+// }
+
+// // -------------------------------------------
+// // 	        Contravariance
+// //
+// //          Prereqs: Lifetime Elision, Subtyping
+// // -------------------------------------------
+
+// // Subtype
+// // 'x: 'y  => T<'x> relationship with T<'y>?
+
+// // Types of variance
+// //      1. Covariance: If 'x: 'y then T<'x>: T<'y>
+// //      2. Contravariance: if 'x: 'y  then T<'y>: T<'x>
+// //                         if 'static: 'a then 'a T: 'static T, assume T = fn(&str)
+// //                         fn(&'a str): fn(&'static str)
+// //      3. Invariance
+
+// // function expects:
+// // fn(fn(&'a str))
+
+// // However, we provided:
+// // fn(fn(&'static str))
+
+// fn str_fn(f: fn(&'static str)) {}
+
+// fn accepts_str_1(s: &'static str) {}
+// fn accepts_str_2(s: &str) {}
+// fn main() {
+//     str_fn(accepts_str_1);
+//     str_fn(accepts_str_2);
+
+//     let mut x: fn(&str) = accepts_str_2; // fn(&'a str)
+//     let mut y: fn(&'static str) = accepts_str_1; // fn(&'static str)
+
+//     //x = y;
+//     y = x;
+// }
+
+// // -------------------------------------------
+// // 	        Invariance
+// //
+// //          Prereqs: Lifetime Elision, Subtyping
+// // -------------------------------------------
+
+// /* // Subtype
+// // 'x: 'y  => T<'x> relationship with T<'y>?
+
+// // Types of variance
+// //      1. Covariance: If 'x: 'y then T<'x>: T<'y>
+// //      2. Contravariance: if 'x: 'y then T<'y>: T<'x>
+// //      3. Invariance: if 'x: 'y then T<'x> has no relationship T<'y>
+// */
+// // function expects: fn(&mut Vec<&'a str>,      &'a str)
+// // We provided:      fn(&mut Vec<&'static str>, &'a str)
+
+// fn accept_vec(str_vec: &mut Vec<&str>, s: &str) {
+//     str_vec.push(s)
+// }
+// fn main() {
+//     let mut vec: Vec<&'static str> = vec!["", ""];
+//     let non_static_str = &*String::from("");
+//     accept_vec(vec, non_static_str);
+// }
+
+// // -------------------------------------------
+// // 	        Invariance
+// //              - Mutable references are invariant in their Type or T
+// //                but covariant in their lifetime
+// // -------------------------------------------
+// // &'a mut T
+// fn update_reference<'longer, 'shorter>(mut u_1: &'longer mut u8, mut u_2: &'shorter mut u8)
+// where
+//     'longer: 'shorter,
+// {
+//     u_2 = u_1; // &'shorter mut u8 = &'longer mut u8
+// }
+// fn main() {
+//     // &'a mut &'b str  // (Note: The 2nd reference: &'b str was considered in the previous lesson on invariance)
+//                         // In this lesson we are focusing and explaining the first reference: &'a mut
+
+//     let mut x1: u8 = 8;
+//     let mut x2: u8 = 10;
+//     let mut y = &mut x1;
+//     {
+//         let mut z = &mut x2;
+//         update_reference(y, z);
+//     }
+// }
+
+//
+
+// macro_rules! Insallah_macro {
+//     () => { 1 + 1
+
+//     };
+// }
+// fn main() {
+//     Insallah_macro!();
+//     println!("{}",Insallah_macro!());
+// }
+
+// -------------------------------------------------
+// 			Declarative Macros
+// -------------------------------------------------
+
+/* General Syntax
+
+macro_rules! macro_name {
+//   |--- Match rules
+    (...) => { ... };
+    (...) => { ... };
+    (...) => { ... };    // the semicolon at the last rule is optional
+}
+*/
+
+// macro_rules! our_macro {
+//     () => { 1+1;
+//     };
+
+//     (something 4 u dear u32 @_@) => {
+//         println!("You found nonsense here")
+//     };
+
+//     ($e1:expr, $e2:expr) => {
+//         $e1 + $e2
+//     };
+
+//     ($a:expr, $b:expr; $c:expr) => {
+//         $a * ($b + $c)
+//     }
+// }
+// fn main() {
+
+//     println!("{}",our_macro!());
+//     our_macro!();
+//     println!("{}", our_macro!(2,2));
+//     println!("{}", our_macro!(5,6;3));
+//     // println!("{}", our_macro!("something",2;"nothing"));
+
+//     our_macro!();
+//     our_macro![];
+
+//     our_macro!{};
+
+// 1. cargo install cargo-expand
+// 2. rustup install nightly
+// 3. rustup component add rustfmt
+// 4. rustup component add rustfmt --toolchain nightly
+//}
+
+// -------------------------------------------------
+// 			Capturing Types
+// -------------------------------------------------
+/*
+macro_rules! input {
+    ($t: ty) => {{
+        let mut n = String::new();
+        std::io::stdin()
+            .read_line(&mut n)
+            .expect("failed to read input");
+
+        let n: $t = n.trim().parse().expect("invalid input");
+        n
+    }};
+}
+
+macro_rules! add_as {
+    ($a: expr, $b: expr, $typ: ty) => {
+        $a as $typ + $b as $typ
+    };
+}
+
+macro_rules! some_macro {
+    ($var: ident) => {
+        $var = $var + 1;
+    };
+}
+fn main() {
+    /*
+    println!("Please enter a floating point number");
+    let some_input_0 = input!(f32);
+    */
+
+    // println!("{}", add_as!(15,2.3,f32));
+    let mut x = 4;
+    some_macro!(x);
+}
+*/
+// macro_rules! create_function {
+//     ($func_name:ident, $input: ident, $type_input: ty, $type_output: ty) => {
+//         fn $func_name($input: $type_input) -> $type_output {
+//             println!(
+//                 "You called {:?}() with the input of {:?}",
+//                 stringify!($func_name),
+//                 stringify!($input1)
+//             );
+//             $input
+//         }
+//     };
+// }
+
+// create_function!(f1, x, i32, i32);
+// fn main() {
+//     //f1(15);
+//     let y = f1(15);
+// }
+
+// -------------------------------------------------
+//          	- Repeating Patterns
+// -------------------------------------------------
+
+// macro_rules! string_concat {
+//     /*
+//     () => {
+//         String::new();
+//     };
+
+//     ($some_str: expr) => {{
+//         let mut temp_str = String::new();
+//         temp_str.push_str($some_str);
+//         temp_str
+//     }
+//     };
+
+//     ($some_s1: expr, $some_s2:expr) => {{
+//         let mut temp_str = String::new();
+//         temp_str.push_str($some_s1);
+//         temp_str.push_str($some_s2);
+
+//         temp_str
+//     }
+// };
+
+// */
+
+// ($($some_str:expr,) *) => {{
+//     let mut temp_str = String::new();
+//     $(temp_str.push_str($some_str);)*
+//     temp_str
+// }
+// };
+
+
+// }
+
+// macro_rules! vec_mac {
+//     ( $($element: expr),*) => {{
+//         let mut some_vec = Vec::new();
+//         $(some_vec.push($element);)*
+//         some_vec
+//     }
+// };
+// }
+// fn main() {
+//     let str_null = string_concat!();
+//     let str_single = string_concat!("First",);
+
+//     let str_double = string_concat!("First", "Second",);
+
+//     let string_vec = vec_mac!("Nouman", "Azam");
+// }
+
+// -------------------------------------------
+// 			Question Marks Operator
+// -------------------------------------------
+
+/*
+use std::num::ParseIntError;
+fn parse_str(input: &str) -> Result<i32, ParseIntError> {
+    let integer = input.parse::<i32>()?;
+
+    println!("The value {:?} is integer {:?}", input, integer);
+    Ok(integer)
+}
+fn main() {
+    let some_values = vec!["123", "some1", "some(123)", "abc", "53"];
+    for value in some_values {
+        println!("{:?}", parse_str(value));
+    }
+}
+*/
+
+/*
+fn division(dividend: f64, divisor: f64) -> Result<f64, String> {
+    //fn division(dividend: f64, divisor: f64) -> Result<f64, u8>  {
+
+    let answer = match divisor {
+        0.0 => Err(String::from("Error: Division by zero")), // Err(8),
+        _ => Ok(dividend / divisor),
+    };
+
+    let correct = answer?; // it is also going to unwrap the result
+                           // A small note: this operator will take the ownership
+                           //println!("{:?}",answer);
+    println!("This line will not print in case of error {:?}", correct);
+    Ok(correct)
+}
+
+fn main() {
+    println!(
+        "Call from main with result equals to {:?}\n",
+        division(9.0, 3.0)
+    );
+    println!(
+        "Call from main with result equals to {:?}\n",
+        division(4.0, 0.0)
+    );
+    println!(
+        "Call from main with result equals to {:?}\n",
+        division(0.0, 2.0)
+    );
+}
+*/
+
+/*
+fn division(dividend: f64, divisor: f64) -> Option<f64> {
+    let answer = match divisor {
+        0.0 => None,
+        _ => Some(dividend / divisor),
+    };
+
+    let correct = answer?; // A small note: this operator will take the ownership
+
+    // println!("{:?}",answer);
+    println!("This line will not print in case of error {:?}", correct);
+    Some(correct)
+}
+
+fn main() {
+    //let x = division(1.0,2.0);
+    println!(
+        "Call from main with result equals to {:?}\n",
+        division(9.0, 3.0)
+    );
+    println!(
+        "Call from main with result equals to {:?}\n",
+        division(4.0, 0.0)
+    );
+    println!(
+        "Call from main with result equals to {:?}\n",
+        division(0.0, 2.0)
+    );
+}
+*/
+
+/*
+#[derive(Debug)]
+enum MathError {
+    DivisionError_DivisionByZero,
+    LogError_NonPositiveLogarithm,
+    SqrtError_NegativeSquareRoot,
+}
+
+type MathResult = Result<(), MathError>;
+
+fn division(x: f64, y: f64) -> MathResult {
+    if y == 0.0 {
+        Err(MathError::DivisionError_DivisionByZero)
+    } else {
+        println!("The division is successful and has a result of {}", x / y);
+        Ok(())
+    }
+}
+
+fn sqrt(x: f64) -> MathResult {
+    if x < 0.0 {
+        Err(MathError::SqrtError_NegativeSquareRoot)
+    } else {
+        println!(
+            "The square root is successful and has a result of {}",
+            x.sqrt()
+        );
+        Ok(())
+    }
+}
+
+fn ln(x: f64) -> MathResult {
+    if x <= 0.0 {
+        Err(MathError::LogError_NonPositiveLogarithm)
+    } else {
+        println!("The log was successful and has a result of {}", x.ln());
+        Ok(())
+    }
+}
+fn operations(x: f64, y: f64) -> MathResult {
+    division(x, y)?;
+    sqrt(x)?;
+    ln(x)?;
+    Ok(())
+}
+
+fn main() {
+    let result = operations(0.0, 10.0);
+    if result.is_ok() {
+        println!("All the functions executed successfully");
+    } else {
+        println!("{:?}", result);
+    }
+}
+*/
+
+// Another example not in the video lectures but simple to understand and very useful
+// use std::env;
+
+// fn current_dir1() -> std::io::Result<()> {
+//     let path = env::current_dir()?; // for unwrapping the current path
+//     println!("\n\n The current path is {:?}\n\n ", path);
+//     Ok(())
+// }
+
+// fn main() {
+//     current_dir1();
+// }
+
+// // -------------------------------------------
+// // 			Correct Search Results Using Word Grouping
+// //           	- Description
+// //           	    - Given a list of words, group the words that are anagrams
+// //           	- Tools
+// //           	    - Hashmaps, Nested Loops
+// // -------------------------------------------
+
+// use std::collections::HashMap;
+// fn word_grouping(words_list: Vec<String>) -> Vec<Vec<String>> {
+//     let mut word_hash = HashMap::new();
+//     let mut char_freq = vec![0; 26];
+
+//     for current_word in words_list {
+//         for c in current_word.to_lowercase().chars() {
+//             char_freq[(c as u32 - 'a' as u32) as usize] += 1;
+//         }
+
+//         let key: String = char_freq
+//             .into_iter()
+//             .map(|i| i.to_string())
+//             .collect::<String>();
+//         word_hash
+//             .entry(key)
+//             .or_insert(Vec::new())
+//             .push(current_word);
+
+//         char_freq = vec![0; 26];
+//     }
+
+//     // Just for hte sake of output and confirming the (key, value) pairs
+//     for (key, value) in &word_hash {
+//         println!("key # {:?} value {:?}", key, value);
+//     }
+
+//     word_hash.into_iter().map(|(_, v)| v).collect()
+// }
+
+// fn main() {
+//     let words = vec![
+//         "The".to_string(),
+//         "teh".to_string(),
+//         "het".to_string(),
+//         "stupid".to_string(),
+//         "studpi".to_string(),
+//         "apple".to_string(),
+//         "appel".to_string(),
+//     ];
+
+//     let grouping = word_grouping(words);
+//     println!("{:?}\n\n\n", grouping);
+
+//     let input_word = String::from("teh");
+
+//     for i in grouping.into_iter() {
+//         if i.contains(&input_word) {
+//             println!("The group of the word is {:?}", i);
+//         }
+//     }
+// }
+
+// -------------------------------------------
+// 			Popularity Scores
+//           	- Description
+//           	    - Given some products along with its respectively popularity scores,
+//                     We want to determine if the popularity is fulctuating, increasing or decreasing
+//           	- Tools
+//           	    - Hashmaps, Loops, conditional if
+// -------------------------------------------
+
+// fn popularity_analysis(scores: Vec<i32>) -> bool {
+//     let mut increasing = true;
+//     let mut decreasing = true;
+
+//     for i in 0..scores.len() - 1 {
+//         if scores[i] > scores[i + 1] {
+//             increasing = false;
+//         }
+//         if scores[i] < scores[i + 1] {
+//             decreasing = false;
+//         }
+//     }
+//     return increasing || decreasing;
+// }
+
+// use std::collections::HashMap;
+
+// fn main() {
+//     let mut products = HashMap::new();
+
+//     products.insert("Product 1", vec![1, 2, 2, 3]);
+//     products.insert("Product 2", vec![4, 5, 6, 3, 4]);
+//     products.insert("Product 3", vec![8, 8, 7, 6, 5, 4, 4, 1]);
+
+//     for (product_id, popularity) in products {
+//         if popularity_analysis(popularity) {
+//             println!("{} popularity is increasing or decreasing", product_id);
+//         } else {
+//             println!("{} popularity is Fluctuating", product_id);
+//         }
+//     }
+// }
+
+// // -------------------------------------------
+// // 			Highest Price Stock
+// //           	- Description
+// //           	    - We have weekwise stock prices. we want to retrieve the highest
+// //                     stock price in any in any week in little to no time.
+// //           	- Tools
+// //           	    - Maxstacks, Structures, Vectors
+// // -------------------------------------------
+
+// struct MaxStack {
+//     main_stack: Vec<i32>,
+//     maximum_stack: Vec<i32>,
+// }
+// impl MaxStack {
+//     fn new() -> Self {
+//         MaxStack {
+//             main_stack: Vec::new(),
+//             maximum_stack: Vec::new(),
+//         }
+//     }
+
+//     fn push(&mut self, value: i32) {
+//         self.main_stack.push(value);
+//         if !self.maximum_stack.is_empty() && self.maximum_stack.last().unwrap() > &value {
+//             self.maximum_stack.push(*self.maximum_stack.last().unwrap());
+//         } else {
+//             self.maximum_stack.push(value);
+//         }
+//     }
+//     fn pop(&mut self) {
+//         self.main_stack.pop();
+//         self.maximum_stack.pop();
+//     }
+
+//     fn max_value(&self) -> i32 {
+//         *self.maximum_stack.last().unwrap()
+//     }
+// }
+
+// fn main() {
+//     let mut stack = MaxStack::new();
+//     stack.push(55);
+//     stack.push(80);
+//     stack.push(120);
+//     stack.push(99);
+//     stack.push(22);
+//     stack.push(140);
+//     stack.push(145);
+
+//     print!("Maximum value of stock: ");
+//     println!("{:}", stack.max_value());
+
+//     println!("After going one week back");
+//     print!("Maximum value of stock: ");
+//     stack.pop();
+
+//     println!("{:}", stack.max_value());
+// }
+
+// // -------------------------------------------
+// // 			Employee with no Meeting
+// //           	- Description
+// //           	    - Given meeting schedule of employees, we want to determine the overlappign time.
+// //           	- Tools
+// //           	    - MultiDimensional Arrays, Nested Loops.
+// // -------------------------------------------
+
+// // essential condition is to check for two ranges of the form [x1, x2] and [y1,y2] is max(x1,y1) <= min(x2,y2)
+// use std::cmp;
+// fn overlapping_meetings(meetings_a: Vec<Vec<i32>>, meetings_b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+//     let mut intersection: Vec<Vec<i32>> = Vec::new();
+//     for i in 0..meetings_a.len() {
+//         for j in 0..meetings_b.len() {
+//             let (st_a, st_b) = (meetings_a[i][0], meetings_b[j][0]);
+//             let (ed_a, ed_b) = (meetings_a[i][1], meetings_b[j][1]);
+//             let overlap_status = overlap(st_a, st_b, ed_a, ed_b);
+//             if overlap_status != None {
+//                 intersection.push(overlap_status.unwrap());
+//             }
+//         }
+//     }
+//     intersection
+// }
+
+// fn overlap(start_a: i32, start_b: i32, end_a: i32, end_b: i32) -> Option<Vec<i32>> {
+//     let mut intersection_time: Vec<i32> = Vec::new();
+//     if cmp::max(start_a, start_b) < cmp::min(end_a, end_b) {
+//         intersection_time.push(cmp::max(start_a, start_b));
+//         intersection_time.push(cmp::min(end_a, end_b));
+//         Some(intersection_time)
+//     } else {
+//         None
+//     }
+// }
+
+// fn main() {
+//     let meetings_sec_a: Vec<Vec<i32>> = vec![vec![13, 15], vec![15, 16], vec![7, 9]];
+//     let meetings_sec_b: Vec<Vec<i32>> = vec![vec![14, 15], vec![5, 10]];
+
+//     let intersection = overlapping_meetings(meetings_sec_a, meetings_sec_b);
+//     println!("The overlapping timings are {:?}", intersection);
+// }
+
+// // -------------------------------------------
+// // 			Longest Non-Stop Work
+// //           	- Description
+// //           	    - Given time slots numbers, we want to determine the longest consective time slots.
+// //           	- Tools
+// //           	    - HashSet, Vectors, Loops
+// // -------------------------------------------
+
+// use std::collections::HashSet;
+// fn longest_busy_time(working_slots: Vec<Vec<u8>>) -> u8 {
+//     let mut employee_longest_nonstop_work: Vec<u8> = Vec::new();
+//     for i in working_slots {
+//         employee_longest_nonstop_work.push(longest_period(i));
+//     }
+
+//     for i in 0..employee_longest_nonstop_work.len() {
+//         println!(
+//             "Employee number {} has worked nonstop for {} slots",
+//             i, employee_longest_nonstop_work[i]
+//         );
+//     }
+
+//     let max_val = employee_longest_nonstop_work.iter().max();
+//     employee_longest_nonstop_work
+//         .iter()
+//         .position(|x| *x == *max_val.unwrap())
+//         .unwrap() as u8
+// }
+
+// fn longest_period(working_slots: Vec<u8>) -> u8 {
+//     let mut longest_busy_period = 0;
+//     let slot_set: HashSet<_> = working_slots.into_iter().collect();
+
+//     for slot in &slot_set {
+//         if !slot_set.contains(&(slot - 1)) {
+//             let mut current_slot = slot.to_owned();
+//             let mut current_consecutive_slot = 1;
+//             while slot_set.contains(&(current_slot + 1)) {
+//                 current_slot += 1;
+//                 current_consecutive_slot += 1;
+//             }
+//             if current_consecutive_slot > longest_busy_period {
+//                 longest_busy_period = current_consecutive_slot;
+//             }
+//         }
+//     }
+
+//     return longest_busy_period;
+// }
+
+// fn main() {
+//     let schedule: Vec<Vec<u8>> = vec![
+//         vec![4, 1, 2, 5, 6, 8, 10, 11],
+//         vec![3, 1, 2, 5, 7, 10, 11, 14],
+//         vec![3, 1, 15, 5, 13, 12, 10, 14, 15, 16, 17, 18, 8, 9],
+//     ];
+
+//     println!(
+//         "Employee number: {} has the highest number of nonstop working slots",
+//         longest_busy_time(schedule)
+//     );
+// }
+
+// // -------------------------------------------
+// // 			Suggesting Items for Special Shopping Card
+// //           	- Description
+// //           	    - Given a list of prices, return a couple of items with their sum matching the given price.
+// //           	- Tools
+// //           	    - Hashsets, Vectors
+// // -------------------------------------------
+
+// use std::collections::HashSet;
+// fn product_suggestions(product_prices: Vec<i32>, amount: i32) -> Vec<Vec<i32>> {
+//     let mut prices_hash = HashSet::new();
+//     let mut offers = Vec::new();
+
+//     //vec![11, 30, 55, 34, 45, 10, 19, 20, 60, 5, 23];
+//     for i in product_prices {
+//         let diff = amount - i;
+//         if prices_hash.get(&diff).is_none() {
+//             prices_hash.insert(i);
+//         } else {
+//             offers.push(vec![i, diff]);
+//         }
+//     }
+
+//     offers
+// }
+
+// fn main() {
+//     let product = vec![11, 30, 55, 34, 45, 10, 19, 20, 60, 5, 23];
+
+//     let suggestions = product_suggestions(product, 50);
+//     println!("{:?}", suggestions);
+// }
+
+// // -------------------------------------------
+// // 			Fetching Top Products
+// //           	- Description
+// //           	    - We are given link lists corresponding to top ranked products in different countries.
+// //           	      We need to combine all these link lists into one consolidated list containing the ranks in an descneder order
+// //           	- Tools
+// //           	    - Linklist + Iterators
+// // -------------------------------------------
+
+// #[derive(Debug)]
+
+// struct Linklist<T: std::fmt::Debug> {
+//     head: pointer<T>,
+// }
+
+// #[derive(Debug)]
+
+// struct Node<T> {
+//     element: T,
+//     next: pointer<T>,
+// }
+
+// type pointer<T> = Option<Box<Node<T>>>;
+
+// impl<T: std::fmt::Debug> Linklist<T> {
+//     fn create_empty_list() -> Linklist<T> {
+//         Linklist { head: None }
+//     }
+
+//     fn add(&mut self, element: T) {
+//         let previous_head = self.head.take();
+//         let new_head = Box::new(Node {
+//             element: element,
+//             next: previous_head,
+//         });
+//         self.head = Some(new_head);
+//     }
+
+//     fn reverse(&mut self) {
+//         if self.head.is_none() || self.head.as_ref().unwrap().next.is_none() {
+//             return;
+//         }
+
+//         let mut prev = None;
+//         let mut current_node = self.head.take();
+//         while current_node.is_some() {
+//             let next = current_node.as_mut().unwrap().next.take();
+//             current_node.as_mut().unwrap().next = prev.take();
+//             prev = current_node.take();
+//             current_node = next;
+//         }
+
+//         self.head = prev.take();
+//     }
+
+//     fn remove(&mut self) -> Option<T> {
+//         let previous_head = self.head.take();
+//         match previous_head {
+//             Some(old_head) => {
+//                 self.head = old_head.next;
+//                 Some(old_head.element)
+//             }
+//             None => None,
+//         }
+//     }
+//     fn peek(&self) -> Option<&T> {
+//         match &self.head {
+//             Some(H) => Some(&H.element),
+//             None => None,
+//         }
+//     }
+//     fn printing(&self) {
+//         let mut list_traversal = &self.head;
+//         println!();
+
+//         while true {
+//             match list_traversal {
+//                 Some(Node) => {
+//                     print!("{:?} ", Node.element);
+//                     list_traversal = &list_traversal.as_ref().unwrap().next;
+//                 }
+//                 None => break,
+//             }
+//         }
+//     }
+// }
+
+// fn sorting_lists(vec_list: &mut Vec<Linklist<i32>>) -> Linklist<i32> {
+//     let mut sortted_list: Linklist<i32> = Linklist::create_empty_list();
+
+//     let mut values: Vec<i32> = Vec::new();
+
+//     while true {
+//         let values = vec_list
+//             .into_iter()
+//             .map(|x| x.head.as_ref().unwrap().element)
+//             .collect::<Vec<i32>>();
+
+//         let min_val = *values.iter().min().unwrap();
+//         let min_index = values.iter().position(|x| *x == min_val).unwrap();
+
+//         sortted_list.add(min_val);
+//         vec_list[min_index].remove();
+
+//         if vec_list[min_index].head.is_none() {
+//             vec_list.remove(min_index);
+//         }
+
+//         if vec_list.len() == 0 {
+//             break;
+//         }
+//     }
+//     sortted_list
+// }
+
+// fn main() {
+//     let mut list1 = Linklist::create_empty_list();
+//     list1.add(45);
+//     list1.add(40);
+//     list1.add(35);
+//     list1.add(23);
+//     list1.add(11);
+
+//     let mut list2 = Linklist::create_empty_list();
+//     list2.add(60);
+//     list2.add(44);
+
+//     let mut list3 = Linklist::create_empty_list();
+//     list3.add(85);
+//     list3.add(20);
+//     list3.add(15);
+
+//     let mut result = sorting_lists(&mut vec![list1, list2, list3]);
+//     result.printing();
+
+//     result.reverse();
+//     result.printing();
+// }
+
+// // -------------------------------------------
+// // 			Efficient Storage and Retrieval of Words
+// // -------------------------------------------
+
+// use std::collections::HashMap;
+// #[derive(Default, Debug, PartialEq, Eq, Clone)]
+// struct Node {
+//     children: HashMap<char, Node>,
+//     is_word: bool,
+// }
+
+// impl Node {
+//     fn new() -> Self {
+//         Node {
+//             is_word: false,
+//             children: HashMap::new(),
+//         }
+//     }
+// }
+// #[derive(Default, Debug, PartialEq, Eq, Clone)]
+// struct WordDictionary {
+//     root: Node,
+// }
+
+// impl WordDictionary {
+//     fn new() -> Self {
+//         Self::default()
+//     }
+
+//     fn insert(&mut self, word: &String) {
+//         let mut current = &mut self.root;
+//         for w in word.chars() {
+//             current = current.children.entry(w).or_insert(Node::new());
+//         }
+
+//         if !current.is_word {
+//             current.is_word = true;
+//         }
+//     }
+
+//     fn search(&self, word: &String) -> bool {
+//         let mut current = &self.root;
+//         for w in word.chars() {
+//             if current.children.get(&w).is_some() {
+//                 current = current.children.get(&w).unwrap();
+//             } else {
+//                 return false;
+//             }
+//         }
+//         current.is_word
+//     }
+// }
+
+// fn main() {
+//     let words = vec![
+//         "the", "a", "there", "answer", "any", "by", "bye", "their", "abc",
+//     ]
+//     .into_iter()
+//     .map(|x| String::from(x))
+//     .collect::<Vec<String>>();
+
+//     let mut d = WordDictionary::new();
+
+//     for i in 0..words.len() {
+//         d.insert(&words[i]);
+//     }
+//     println!(
+//         "Searching 'there' in the dictionary results: {}",
+//         d.search(&"ther".to_string())
+//     );
+//     // search for 'that' and finally ther
+// }
+
+
+// -------------------------------------------
+// 			Most Recently Used Products
+//           	- Description
+//           	    - A business is interesting in knowing the products that has been
+//                    purchased most recently by a customer.
+//           	- Tools
+//           	    - Hashmaps + Doubly Link List
+// -------------------------------------------
+
+// use std::cell::RefCell;
+// use std::collections::HashMap;
+// use std::rc::Rc;
+// #[derive(Debug)]
+// struct Node {
+//     prod_id: i32,
+//     prev: Link,
+//     next: Link,
+// }
+
+// impl Node {
+//     fn new(elem: i32) -> Rc<RefCell<Self>> {
+//         Rc::new(RefCell::new(Node {
+//             prod_id: elem,
+//             prev: None,
+//             next: None,
+//         }))
+//     }
+// }
+
+// type Link = Option<Rc<RefCell<Node>>>;
+// #[derive(Default, Debug)]
+// struct List {
+//     head: Link,
+//     tail: Link,
+// }
+
+// impl List {
+//     fn new() -> List {
+//         List {
+//             head: None,
+//             tail: None,
+//         }
+//     }
+
+//     // a slightly changed version where the function returns the a link now
+//     pub fn push_back(&mut self, elem: i32) -> Link {
+//         let new_tail = Node::new(elem);
+//         match self.tail.take() {
+//             Some(old_tail) => {
+//                 old_tail.borrow_mut().next = Some(new_tail.clone());
+//                 new_tail.borrow_mut().prev = Some(old_tail);
+//                 self.tail = Some(new_tail);
+//             }
+//             None => {
+//                 self.head = Some(new_tail.clone());
+//                 self.tail = Some(new_tail);
+//             }
+//         }
+//         self.tail.clone()
+//     }
+
+//     // a slightly changed version of the remove_head and now in this case it returns the head which is removed
+//     pub fn remove_front(&mut self) -> Option<Link> {
+//         self.head
+//             .take()
+//             .map(|old_head| match old_head.borrow_mut().next.take() {
+//                 Some(new_head) => {
+//                     new_head.borrow_mut().prev.take();
+//                     self.head = Some(new_head);
+//                     self.head.clone()
+//                 }
+//                 None => {
+//                     self.tail.take();
+//                     None
+//                 }
+//             })
+//     }
+
+//     fn move_to_tail(&mut self, node: &Rc<RefCell<Node>>) {
+//         let prev = node.borrow().prev.as_ref().map(|a| Rc::clone(a));
+//         let next = node.borrow().next.as_ref().map(|a| Rc::clone(a));
+//         match (prev, next) {
+//             (None, None) => {
+//                 // This is the only node in list, so do nothng
+//             }
+//             (Some(_), None) => {
+//                 // This node is already the tail, so do nothing
+//             }
+//             (None, Some(next)) => {
+//                 // This node is at the head, so we need to move it to the tail
+//                 node.borrow_mut().next = None;
+//                 next.borrow_mut().prev = None;
+//                 self.head = Some(next.clone());
+
+//                 let prev_tail = self.tail.as_ref().unwrap();
+//                 prev_tail.borrow_mut().next = Some(node.clone());
+//                 node.borrow_mut().prev = Some(prev_tail.clone());
+//                 self.tail = Some(node.clone());
+//             }
+//             (Some(prev), Some(next)) => {
+//                 node.borrow_mut().next = None;
+
+//                 prev.borrow_mut().next = Some(next.clone());
+//                 next.borrow_mut().prev = Some(prev.clone());
+
+//                 let prev_tail = self.tail.as_ref().unwrap();
+//                 prev_tail.borrow_mut().next = Some(node.clone());
+//                 node.borrow_mut().prev = Some(prev_tail.clone());
+//                 self.tail = Some(node.clone());
+//             }
+//         }
+//     }
+// }
+
+// #[derive(Debug)]
+// struct MRP_Item {
+//     map: HashMap<i32, Rc<RefCell<Node>>>,
+//     item_list: List,
+//     size: i32,
+//     capacity: i32,
+// }
+
+// impl MRP_Item {
+//     fn new(capacity: i32) -> Self {
+//         Self {
+//             map: HashMap::new(),
+//             item_list: List::new(),
+//             size: 0,
+//             capacity: capacity,
+//         }
+//     }
+
+//     fn purchased(&mut self, prod_id: i32) {
+//         // First check if we have the entry for the movie already in the hashmap. If yes move to the tail
+//         if let Some(node) = self.map.get(&prod_id) {
+//             self.item_list.move_to_tail(node);
+//         } else {
+//             // This means that the movie is not in the hashmap
+//             if self.size >= self.capacity {
+//                 // If the capacity is exhausted then remove head and insert at the tail
+//                 let prev_head = self.item_list.remove_front().unwrap();
+//                 self.map.remove(&prev_head.unwrap().borrow().prod_id);
+//             }
+//             // Add node to list head
+//             let node = self.item_list.push_back(prod_id).unwrap();
+//             // Update hashmap
+
+//             self.map.insert(prod_id, node);
+//             // update size
+//             self.size += 1;
+//         }
+//     }
+//     fn print(&self) {
+//         let mut traversal = self.item_list.head.clone();
+//         while !traversal.is_none() {
+//             let temp = traversal.clone().unwrap();
+//             print!("{} ", temp.borrow().prod_id);
+//             traversal = temp.borrow().next.clone();
+//         }
+//         println!("");
+//     }
+// }
+// fn main() {
+//     let mut items_list = MRP_Item::new(3);
+
+//     items_list.purchased(10);
+//     items_list.print();
+
+//     items_list.purchased(15);
+//     items_list.print();
+
+//     items_list.purchased(20);
+//     items_list.print();
+
+//     items_list.purchased(25);
+//     items_list.print();
+
+//     items_list.purchased(20);
+//     items_list.print();
+//     /*
+//     items_list.purchased(25);
+//     items_list.print();
+
+//     items_list.purchased(20);
+//     items_list.print();
+
+//     items_list.purchased(5);
+//     items_list.print();
+//      */
+// }
+
+// // -------------------------------------------
+// // 			Displaying Participant of an Online Meeting
+// //           	- Description
+// //           	    - Retrieving list of paginated view of the list participants in an online meeting
+
+// //           	- Tools
+// //           	    - BST + Stack
+// // -------------------------------------------
+
+// use std::cell::RefCell;
+// use std::rc::Rc;
+// #[derive(Debug, Default, PartialEq, Eq, Clone)]
+// struct Node {
+//     val: String,
+//     left: Link,
+//     right: Link,
+// }
+
+// type Link = Option<Rc<RefCell<Node>>>;
+// impl Node {
+//     fn new(val: String) -> Self {
+//         Node {
+//             val,
+//             left: None,
+//             right: None,
+//         }
+//     }
+
+//     fn insert(&mut self, val: String) {
+//         if val > self.val {
+//             match &self.right {
+//                 None => self.right = Some(Rc::new(RefCell::new(Self::new(val)))),
+//                 Some(node) => node.borrow_mut().insert(val.to_string()),
+//             }
+//         } else {
+//             match &self.left {
+//                 None => self.left = Some(Rc::new(RefCell::new(Self::new(val)))),
+//                 Some(node) => node.borrow_mut().insert(val.to_string()),
+//             }
+//         }
+//     }
+// }
+
+// #[derive(Debug, Default, PartialEq, Eq)]
+// struct BinarySearchTree {
+//     root: Node,
+// }
+// impl BinarySearchTree {
+//     fn new(val: String) -> Self {
+//         BinarySearchTree {
+//             root: Node::new(val.to_string()),
+//         }
+//     }
+//     fn insert(&mut self, val: String) {
+//         self.root.insert(val.to_string());
+//     }
+// }
+
+// struct DisplayLobby {
+//     stack: Vec<Rc<RefCell<Node>>>,
+// }
+
+// impl DisplayLobby {
+//     fn new(root: Option<Rc<RefCell<Node>>>) -> Self {
+//         let mut stack = Vec::new();
+//         Self::push_all_left(root.clone(), &mut stack);
+//         DisplayLobby { stack }
+//     }
+
+//     fn push_all_left(mut p: Option<Rc<RefCell<Node>>>, stack: &mut Vec<Rc<RefCell<Node>>>) {
+//         while let Some(link) = p.clone() {
+//             stack.push(p.clone().unwrap());
+//             p = link.borrow().left.clone();
+//         }
+//     }
+
+//     fn next_name(&mut self) -> String {
+//         let node = self.stack.pop().unwrap();
+//         let name = &node.borrow().val;
+//         let mut next_node = node.borrow().right.clone();
+
+//         Self::push_all_left(next_node, &mut self.stack);
+//         name.to_string()
+//     }
+
+//     fn next_page(&mut self) -> Vec<String> {
+//         let mut resultant_names: Vec<String> = Vec::new();
+//         for i in 0..10 {
+//             if !self.stack.is_empty() {
+//                 resultant_names.push(self.next_name());
+//             } else {
+//                 break;
+//             }
+//         }
+//         resultant_names
+//     }
+// }
+
+// fn main() {
+//     let mut bst = BinarySearchTree::new("Jeanette".to_string());
+//     let names: Vec<String> = vec![
+//         "Latasha",
+//         "Elvira",
+//         "Caryl",
+//         "Antoinette",
+//         "Cassie",
+//         "Charity",
+//         "Lyn",
+//         "Lia",
+//         "Anya",
+//         "Albert",
+//         "Cherlyn",
+//         "Lala",
+//         "Kandice",
+//         "Iliana",
+//         "Nouman",
+//         "Azam",
+//     ]
+//     .into_iter()
+//     .map(String::from)
+//     .collect();
+//     for name in names.into_iter() {
+//         bst.insert(name.to_string());
+//     }
+
+//     let mut display = DisplayLobby::new(Some(Rc::new(RefCell::new(bst.root))));
+//     println!("Participants on first page: {:?}", display.next_page());
+
+//     println!("Participants on second page: {:?}", display.next_page());
+// }
+
+//WEB PROGRAMMING BASICS
+
+// use std::net::{TcpListener};
+
+// use tokio::stream;
+
+// fn main() {
+//     let listener= TcpListener::bind("127.0.0.1:8000").unwrap();
+//     let stream = listener.accept();
+
+//     println!("The stream {:?} The socket{:?}", stream.as_ref().unwrap().1, stream.as_ref().unwrap().0);
+// }
+
